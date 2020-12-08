@@ -9,9 +9,9 @@ namespace VectorMaster
 {
     public class LineFigure : IFigure
     {
-        private Point _beginLine;
-        private Point _endLine;
-        public LineFigure()
+        public Point _beginLine { get; private set; }
+        public Point _endLine{ get; private set; }
+    public LineFigure()
         {
 
         }

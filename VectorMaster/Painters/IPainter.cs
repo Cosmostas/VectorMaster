@@ -9,6 +9,6 @@ namespace VectorMaster
 {
     public interface IPainter
     {
-        void Paint(Bitmap Bm, Graphics graphics);   
+        Bitmap Paint(Bitmap Bm, Pen pen, Point firstPoint, Point LastPoint);   
     }
 }
