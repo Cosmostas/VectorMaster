@@ -180,6 +180,7 @@
             this.radioButton5.TabIndex = 6;
             this.radioButton5.TabStop = true;
             this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
             // 
             // radioButton4
             // 
@@ -190,6 +191,7 @@
             this.radioButton4.TabIndex = 5;
             this.radioButton4.TabStop = true;
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
             // radioButton3
             // 
