@@ -129,6 +129,15 @@ namespace VectorMaster
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             factory = new RhombusFactory();
+        } 
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            factory = new RightTriangleFactory();
+        }
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            factory = new IsoscelesTriangleFactory();
         }
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
@@ -159,5 +168,6 @@ namespace VectorMaster
             pictureBox1.Image = Bm;
         }
 
+        
     }
 }
