@@ -6,34 +6,33 @@ using System.Text;
 using System.Threading.Tasks;
 using VectorMaster.Calculators;
 
-namespace VectorMaster
+namespace VectorMaster.Figures
 {
-    public class RectangleFigure : AFigure
+    public class RhombusFigure : AFigure
     {
-        public RectangleFigure()
+        public RhombusFigure()
         {
             listPoints = new List<Point>();
 
             painter = new LinePainter();
-            calculator = new RectangleCalculator();
+            calculator = new RhombusCalculator();
 
         }
-        public RectangleFigure(Pen pen)
+        public RhombusFigure(Pen pen)
         {
             listPoints = new List<Point>();
             this.pen = pen;
 
             painter = new LinePainter();
-            calculator = new RectangleCalculator();
+            calculator = new RhombusCalculator();
         }
-        public RectangleFigure(Color color, int width)
+        public RhombusFigure(Color color, int width)
         {
             listPoints = new List<Point>();
             this.pen = new Pen(color, width);
 
             painter = new LinePainter();
-            calculator = new RectangleCalculator();
+            calculator = new RhombusCalculator();
         }
-
     }
 }
