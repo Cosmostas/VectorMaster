@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VectorMaster
+namespace VectorMaster.Calculators
 {
-    public interface IFigure
+    public interface ICalculator
     {
-        List<Point> GetPoints();
-        void SetPoint(Point firstLocation, Point secondLocation);
+        List<Point> Calculate(Point firstPoint, Point lastPoint);
     }
 }

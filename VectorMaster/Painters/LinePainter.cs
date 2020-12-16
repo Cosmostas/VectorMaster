@@ -9,24 +9,11 @@ namespace VectorMaster
 {
     public class LinePainter : IPainter
     {
-        LineFigure line;
+        public void Paint(Bitmap Bm, Pen pen, List<Point> listPoints)
+        {
+            Graphics graphics = Graphics.FromImage(Bm);
+            graphics.DrawPolygon(pen, listPoints.ToArray());
 
-        public LinePainter()
-        {
-            line = new LineFigure();
-        }
-
-        public LinePainter(Point firstPoint, Point LastPoint)
-        {
-            line = new LineFigure(firstPoint, LastPoint);
-        }
-        public Bitmap Paint(Bitmap Bm, Pen pen, Point firstPoint, Point LastPoint)
-        {
-            line.SetPoint(firstPoint, LastPoint);
-            Bitmap tmpBM = (Bitmap) Bm.Clone();
-            Graphics graphics = Graphics.FromImage(tmpBM);
-            graphics.DrawPolygon(pen, line.GetPoints().ToArray());
-            return tmpBM;
         }
 
     }

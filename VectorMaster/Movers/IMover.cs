@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VectorMaster
+namespace VectorMaster.Movers
 {
-    public interface IPainter
+    public interface IMover
     {
-        void Paint(Bitmap Bm, Pen pen, List<Point> listPoints);   
+        void Move(Point delta);
     }
 }

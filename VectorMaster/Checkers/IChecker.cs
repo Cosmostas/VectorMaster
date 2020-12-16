@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VectorMaster
+namespace VectorMaster.Checkers
 {
-    public interface IPainter
+    public interface IChecker
     {
-        void Paint(Bitmap Bm, Pen pen, List<Point> listPoints);   
+        bool CheckHit(Point dot, List<Point> listPoints);
     }
 }

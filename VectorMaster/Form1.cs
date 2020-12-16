@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VectorMaster.Factory;
 
 namespace VectorMaster
 {
@@ -15,9 +16,15 @@ namespace VectorMaster
         Bitmap Bm;
         Graphics graphics;
         Pen pen;
-        List<IPainter> painters = new List<IPainter>();
-        IPainter currentPainter;
-        bool md = false;
+
+        List<AFigure> figures = new List<AFigure>();
+
+        AFigure currentFigure;
+        
+        IFactory factory;
+        
+        bool id_MouseDown = false;
+
         Point prevPoint = new Point(0,0);
 
         public Form1()
@@ -28,29 +35,35 @@ namespace VectorMaster
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             prevPoint = e.Location;
-            md = true;
-            painters.Add(currentPainter);
+            id_MouseDown = true;
+
+            currentFigure = factory.CreateFigure(pen);
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (md)
+            if (id_MouseDown)
             {
-                Bitmap tmpBm = (Bitmap)painters[painters.Count - 1].Paint(Bm, pen, prevPoint, e.Location).Clone();
+                Bitmap tmpBm = (Bitmap)Bm.Clone();
 
+                currentFigure.listPoints = currentFigure.Calculate(prevPoint, e.Location);
+
+                currentFigure.Paint(tmpBm);
                 pictureBox1.Image = tmpBm;
             }
         }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
-            md = false;
+            id_MouseDown = false;
 
+            currentFigure.listPoints = currentFigure.Calculate(prevPoint, e.Location);
+            figures.Add(currentFigure);
 
-            Bm = (Bitmap) painters[painters.Count - 1].Paint(Bm, pen, prevPoint, e.Location).Clone();
-
+            currentFigure.Paint(Bm);
             pictureBox1.Image = Bm;
-        
+
+            prevPoint = e.Location;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -61,12 +74,12 @@ namespace VectorMaster
 
         private void Tools1_CheckedChanged(object sender, EventArgs e)
         {
-            currentPainter = new LinePainter();
+            factory = new LineFactory();
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            currentPainter = new RectanglePainter();
+         
         }
     }
 }

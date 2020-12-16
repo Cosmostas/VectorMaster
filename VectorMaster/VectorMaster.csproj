@@ -46,13 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculators\LineCalculator.cs" />
+    <Compile Include="Calculators\ICalculator.cs" />
+    <Compile Include="Checkers\IChecker.cs" />
+    <Compile Include="Factory\IFactory.cs" />
+    <Compile Include="Factory\LineFactory.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Figures\IFigure.cs" />
+    <Compile Include="Figures\AFigure.cs" />
+    <Compile Include="Movers\IMover.cs" />
     <Compile Include="Painters\IPainter.cs" />
     <Compile Include="Figures\LineFigure.cs" />
     <Compile Include="Painters\LinePainter.cs" />

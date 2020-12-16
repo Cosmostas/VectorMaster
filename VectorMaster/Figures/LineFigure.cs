@@ -4,31 +4,34 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using VectorMaster.Calculators;
 namespace VectorMaster
 {
-    public class LineFigure : IFigure
+    public class LineFigure : AFigure
     {
-        public Point _beginLine { get; private set; }
-        public Point _endLine{ get; private set; }
-    public LineFigure()
+        public LineFigure()
         {
+            listPoints = new List<Point>();
 
-        }
-        public LineFigure(Point beginLine, Point endLine)
-        {
-            _beginLine = beginLine;
-            _endLine = endLine;
-        }
+            painter = new LinePainter();
+            calculator = new LineCalculator();
 
-        public void SetPoint(Point beginLine, Point endLine)
+        } 
+        public LineFigure(Pen pen)
         {
-            _beginLine = beginLine;
-            _endLine = endLine;
+            listPoints = new List<Point>();
+            this.pen = pen;
+
+            painter = new LinePainter();
+            calculator = new LineCalculator();
         }
-        public List<Point> GetPoints()
+        public LineFigure(Color color, int width)
         {
-            return new List<Point>() { _beginLine, _endLine};
+            listPoints = new List<Point>();
+            this.pen = new Pen(color, width);
+
+            painter = new LinePainter();
+            calculator = new LineCalculator();
         }
 
     }

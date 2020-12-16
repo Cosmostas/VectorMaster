@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VectorMaster
+namespace VectorMaster.Factory
 {
-    public interface IPainter
+    public interface IFactory
     {
-        void Paint(Bitmap Bm, Pen pen, List<Point> listPoints);   
+        AFigure CreateFigure();
+        AFigure CreateFigure(Pen pen);
     }
 }
