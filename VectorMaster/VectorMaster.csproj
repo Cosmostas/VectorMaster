@@ -46,13 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculators\EllipseCalculator.cs" />
     <Compile Include="Calculators\LineCalculator.cs" />
     <Compile Include="Calculators\ICalculator.cs" />
+    <Compile Include="Calculators\RhombusCalculator.cs" />
     <Compile Include="Calculators\RectangleCalculator.cs" />
     <Compile Include="Checkers\IChecker.cs" />
+    <Compile Include="Factory\EllipseFactory.cs" />
     <Compile Include="Factory\IFactory.cs" />
     <Compile Include="Factory\LineFactory.cs" />
     <Compile Include="Factory\RectangleFactory.cs" />
+    <Compile Include="Factory\RhombusFactory.cs" />
+    <Compile Include="Figures\EllipseFigure.cs" />
+    <Compile Include="Figures\RhombusFigure.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,7 @@
     </Compile>
     <Compile Include="Figures\AFigure.cs" />
     <Compile Include="Movers\IMover.cs" />
+    <Compile Include="Painters\EllipsePainter.cs" />
     <Compile Include="Painters\IPainter.cs" />
     <Compile Include="Figures\LineFigure.cs" />
     <Compile Include="Painters\LinePainter.cs" />

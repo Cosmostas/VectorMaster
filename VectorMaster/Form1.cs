@@ -27,6 +27,8 @@ namespace VectorMaster
 
         Point prevPoint = new Point(0,0);
 
+        bool pipette;
+
         String Mode;
 
         public Form1()
@@ -98,12 +100,19 @@ namespace VectorMaster
             pictureBox1.Image = Bm;
 
             prevPoint = e.Location;
+
+            if (pipette == true)
+            {
+                pen.Color = Bm.GetPixel(e.Location.X, e.Location.Y);
+                pipette = false;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             Bm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            pen = new Pen(Color.Black, 1);
+            graphics = Graphics.FromImage(Bm);
+            pen = new Pen(colorDialog1.Color, trackBar1.Value);
             Mode = "Paint";
         }
 
@@ -115,6 +124,35 @@ namespace VectorMaster
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             factory = new RectangleFactory();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            pen.Width = trackBar1.Value;
+        }
+
+        private void buttonPipette_Click(object sender, EventArgs e)
+        {
+            pipette = true;
+        }
+
+        private void buttonColor_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() != System.Windows.Forms.DialogResult.Cancel)
+            {
+                pen.Color = colorDialog1.Color;
+            }
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            graphics.Clear(Color.White);
+            pictureBox1.Image = Bm;
         }
     }
 }

@@ -11,6 +11,7 @@ namespace VectorMaster
     {
         public void Paint(Bitmap Bm, Pen pen, List<Point> listPoints)
         {
+
            
         }
     }
