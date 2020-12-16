@@ -14,7 +14,6 @@ namespace VectorMaster
     public partial class Form1 : Form
     {
         Bitmap Bm;
-        Graphics graphics;
         Pen pen;
 
         List<AFigure> figures = new List<AFigure>();
@@ -27,7 +26,6 @@ namespace VectorMaster
 
         Point prevPoint = new Point(0,0);
 
-        bool pipette;
 
         String Mode;
 
@@ -101,17 +99,16 @@ namespace VectorMaster
 
             prevPoint = e.Location;
 
-            if (pipette == true)
+            if (Mode == "Pipete")
             {
                 pen.Color = Bm.GetPixel(e.Location.X, e.Location.Y);
-                pipette = false;
+                Mode = "Paint";
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             Bm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            graphics = Graphics.FromImage(Bm);
             pen = new Pen(colorDialog1.Color, trackBar1.Value);
             Mode = "Paint";
         }
@@ -125,20 +122,23 @@ namespace VectorMaster
         {
             factory = new RectangleFactory();
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-
+            factory = new EllipseFactory();
         }
-
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            factory = new RhombusFactory();
+        }
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             pen.Width = trackBar1.Value;
         }
 
+
         private void buttonPipette_Click(object sender, EventArgs e)
         {
-            pipette = true;
+            Mode = "Pipete";
         }
 
         private void buttonColor_Click(object sender, EventArgs e)
@@ -151,8 +151,13 @@ namespace VectorMaster
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
+            figures.Clear();
+
+            Graphics graphics = Graphics.FromImage(Bm);
             graphics.Clear(Color.White);
+
             pictureBox1.Image = Bm;
         }
+
     }
 }

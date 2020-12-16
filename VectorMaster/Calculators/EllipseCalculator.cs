@@ -11,12 +11,38 @@ namespace VectorMaster.Calculators
     {
         public List<Point> Calculate(Point firstPoint, Point lastPoint)
         {
+
+            Point startPoint;
+
+            if(firstPoint.X < lastPoint.X)
+            {
+                if (firstPoint.Y < lastPoint.Y)
+                {
+                    startPoint = firstPoint;
+                }
+                else
+                {
+                    startPoint = new Point(firstPoint.X, lastPoint.Y);
+                }
+            }
+            else
+            {
+                if (firstPoint.Y < lastPoint.Y)
+                {
+                    startPoint = new Point(lastPoint.X, firstPoint.Y);
+                }
+                else
+                {
+                    startPoint = lastPoint;
+                }
+            }
+
             int sizeX = Math.Abs(firstPoint.X - lastPoint.X);
             int sizeY = Math.Abs(firstPoint.Y - lastPoint.Y);
 
             return new List<Point>(2) 
             {
-                firstPoint,
+                startPoint,
                 new Point(sizeX, sizeY)
             };
         }
