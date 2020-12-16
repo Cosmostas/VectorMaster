@@ -27,11 +27,45 @@ namespace VectorMaster
 
         Point prevPoint = new Point(0,0);
 
+        String Mode;
+
         public Form1()
         {
             InitializeComponent();
         }
 
+        public Point CalculatePoint(Point mouseLocation)
+        {
+
+            if (Control.ModifierKeys == Keys.Shift)
+            {
+                if (Math.Abs(mouseLocation.X - prevPoint.X) > Math.Abs(mouseLocation.Y - prevPoint.Y))
+                {
+                    if (mouseLocation.X - prevPoint.X > 0)
+                    {
+                        mouseLocation.X = prevPoint.X + Math.Abs(mouseLocation.Y - prevPoint.Y);
+                    }
+                    else
+                    {
+                        mouseLocation.X = prevPoint.X - Math.Abs(mouseLocation.Y - prevPoint.Y);
+                    }
+
+                }
+                else
+                {
+                    if (mouseLocation.Y - prevPoint.Y > 0)
+                    {
+                        mouseLocation.Y = prevPoint.Y + Math.Abs(mouseLocation.X - prevPoint.X);
+                    }
+                    else
+                    {
+                        mouseLocation.Y = prevPoint.Y - Math.Abs(mouseLocation.X - prevPoint.X);
+                    }
+                }
+            }
+
+            return mouseLocation;
+        }
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             prevPoint = e.Location;
@@ -46,7 +80,7 @@ namespace VectorMaster
             {
                 Bitmap tmpBm = (Bitmap)Bm.Clone();
 
-                currentFigure.listPoints = currentFigure.Calculate(prevPoint, e.Location);
+                currentFigure.listPoints = currentFigure.Calculate(prevPoint, CalculatePoint(e.Location));
 
                 currentFigure.Paint(tmpBm);
                 pictureBox1.Image = tmpBm;
@@ -57,7 +91,7 @@ namespace VectorMaster
         {
             id_MouseDown = false;
 
-            currentFigure.listPoints = currentFigure.Calculate(prevPoint, e.Location);
+            currentFigure.listPoints = currentFigure.Calculate(prevPoint, CalculatePoint(e.Location));
             figures.Add(currentFigure);
 
             currentFigure.Paint(Bm);
@@ -70,6 +104,7 @@ namespace VectorMaster
         {
             Bm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             pen = new Pen(Color.Black, 1);
+            Mode = "Paint";
         }
 
         private void Tools1_CheckedChanged(object sender, EventArgs e)
@@ -79,7 +114,7 @@ namespace VectorMaster
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-         
+            factory = new RectangleFactory();
         }
     }
 }
