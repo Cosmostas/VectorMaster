@@ -5,15 +5,14 @@ using VectorMaster;
 
 namespace VectorMasterTest
 {
-    public class RectangleFigureTest
+    public class RectangleCalculatorTest
     {
 
         [Test, TestCaseSource(typeof(GetPointMock))]
-        public void SetPoints(Point firstPoint, Point lastPoint, Point[] Expected)
+        public void Calculate(Point firstPoint, Point lastPoint, Point[] Expected)
         {
             RectangleFigure rectangle = new RectangleFigure();
-            rectangle.SetPoint(firstPoint, lastPoint);
-            Point[] actual = rectangle.GetPoints().ToArray(); 
+            Point[] actual = rectangle.Calculate(firstPoint,lastPoint).ToArray();
             Assert.AreEqual(Expected, actual);
         }
     }
