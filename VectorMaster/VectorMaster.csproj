@@ -106,5 +106,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons\icons8-eraser-24.png" />
+    <Content Include="Icons\icons8-line-24.png" />
+    <Content Include="Icons\icons8-oval-24.png" />
+    <Content Include="Icons\icons8-rhombus-24.png" />
+    <Content Include="Icons\icons8-square-24.png" />
+    <Content Include="Icons\icons8-triangle-24.png" />
+    <Content Include="Icons\pythagoras.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

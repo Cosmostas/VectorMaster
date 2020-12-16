@@ -28,21 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Tools1 = new System.Windows.Forms.RadioButton();
             this.Tools = new System.Windows.Forms.GroupBox();
-            this.buttonClear = new System.Windows.Forms.Button();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.EraserTriangle = new System.Windows.Forms.PictureBox();
+            this.RightTriangleTools = new System.Windows.Forms.PictureBox();
+            this.IsoscelesTriangleTools = new System.Windows.Forms.PictureBox();
+            this.RhombusTools = new System.Windows.Forms.PictureBox();
+            this.EllipseTools = new System.Windows.Forms.PictureBox();
+            this.RectangleTools = new System.Windows.Forms.PictureBox();
+            this.LineTools = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonPipette = new System.Windows.Forms.Button();
@@ -51,6 +46,13 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Tools.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EraserTriangle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RightTriangleTools)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IsoscelesTriangleTools)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RhombusTools)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EllipseTools)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RectangleTools)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LineTools)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
@@ -67,164 +69,91 @@
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
-            // Tools1
-            // 
-            this.Tools1.AutoSize = true;
-            this.Tools1.Location = new System.Drawing.Point(29, 19);
-            this.Tools1.Name = "Tools1";
-            this.Tools1.Size = new System.Drawing.Size(14, 13);
-            this.Tools1.TabIndex = 1;
-            this.Tools1.TabStop = true;
-            this.Tools1.UseVisualStyleBackColor = true;
-            this.Tools1.CheckedChanged += new System.EventHandler(this.Tools1_CheckedChanged);
-            // 
             // Tools
             // 
             this.Tools.BackColor = System.Drawing.Color.Crimson;
-            this.Tools.Controls.Add(this.buttonClear);
-            this.Tools.Controls.Add(this.radioButton11);
-            this.Tools.Controls.Add(this.radioButton10);
-            this.Tools.Controls.Add(this.radioButton9);
-            this.Tools.Controls.Add(this.radioButton8);
-            this.Tools.Controls.Add(this.radioButton7);
-            this.Tools.Controls.Add(this.radioButton6);
-            this.Tools.Controls.Add(this.radioButton5);
-            this.Tools.Controls.Add(this.radioButton4);
-            this.Tools.Controls.Add(this.radioButton3);
-            this.Tools.Controls.Add(this.radioButton2);
-            this.Tools.Controls.Add(this.radioButton1);
-            this.Tools.Controls.Add(this.Tools1);
+            this.Tools.Controls.Add(this.EraserTriangle);
+            this.Tools.Controls.Add(this.RightTriangleTools);
+            this.Tools.Controls.Add(this.IsoscelesTriangleTools);
+            this.Tools.Controls.Add(this.RhombusTools);
+            this.Tools.Controls.Add(this.EllipseTools);
+            this.Tools.Controls.Add(this.RectangleTools);
+            this.Tools.Controls.Add(this.LineTools);
             this.Tools.Location = new System.Drawing.Point(16, 56);
             this.Tools.Name = "Tools";
-            this.Tools.Size = new System.Drawing.Size(72, 363);
+            this.Tools.Size = new System.Drawing.Size(83, 363);
             this.Tools.TabIndex = 2;
             this.Tools.TabStop = false;
             // 
-            // buttonClear
+            // EraserTriangle
             // 
-            this.buttonClear.BackColor = System.Drawing.Color.White;
-            this.buttonClear.Location = new System.Drawing.Point(5, 260);
-            this.buttonClear.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(62, 58);
-            this.buttonClear.TabIndex = 4;
-            this.buttonClear.UseVisualStyleBackColor = false;
-            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            this.EraserTriangle.Image = ((System.Drawing.Image)(resources.GetObject("EraserTriangle.Image")));
+            this.EraserTriangle.Location = new System.Drawing.Point(29, 306);
+            this.EraserTriangle.Name = "EraserTriangle";
+            this.EraserTriangle.Size = new System.Drawing.Size(25, 25);
+            this.EraserTriangle.TabIndex = 10;
+            this.EraserTriangle.TabStop = false;
+            this.EraserTriangle.Click += new System.EventHandler(this.EraserTriangle_Click);
             // 
-            // radioButton11
+            // RightTriangleTools
             // 
-            this.radioButton11.AutoSize = true;
-            this.radioButton11.Location = new System.Drawing.Point(29, 228);
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(14, 13);
-            this.radioButton11.TabIndex = 12;
-            this.radioButton11.TabStop = true;
-            this.radioButton11.UseVisualStyleBackColor = true;
+            this.RightTriangleTools.Image = ((System.Drawing.Image)(resources.GetObject("RightTriangleTools.Image")));
+            this.RightTriangleTools.Location = new System.Drawing.Point(29, 174);
+            this.RightTriangleTools.Name = "RightTriangleTools";
+            this.RightTriangleTools.Size = new System.Drawing.Size(25, 25);
+            this.RightTriangleTools.TabIndex = 9;
+            this.RightTriangleTools.TabStop = false;
+            this.RightTriangleTools.Click += new System.EventHandler(this.RightTriangleTools_Click);
             // 
-            // radioButton10
+            // IsoscelesTriangleTools
             // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(29, 209);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(14, 13);
-            this.radioButton10.TabIndex = 11;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.UseVisualStyleBackColor = true;
+            this.IsoscelesTriangleTools.Image = ((System.Drawing.Image)(resources.GetObject("IsoscelesTriangleTools.Image")));
+            this.IsoscelesTriangleTools.Location = new System.Drawing.Point(29, 143);
+            this.IsoscelesTriangleTools.Name = "IsoscelesTriangleTools";
+            this.IsoscelesTriangleTools.Size = new System.Drawing.Size(25, 25);
+            this.IsoscelesTriangleTools.TabIndex = 8;
+            this.IsoscelesTriangleTools.TabStop = false;
+            this.IsoscelesTriangleTools.Click += new System.EventHandler(this.IsoscelesTriangleTools_Click);
             // 
-            // radioButton9
+            // RhombusTools
             // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(29, 190);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(14, 13);
-            this.radioButton9.TabIndex = 10;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.UseVisualStyleBackColor = true;
+            this.RhombusTools.Image = ((System.Drawing.Image)(resources.GetObject("RhombusTools.Image")));
+            this.RhombusTools.Location = new System.Drawing.Point(29, 112);
+            this.RhombusTools.Name = "RhombusTools";
+            this.RhombusTools.Size = new System.Drawing.Size(25, 25);
+            this.RhombusTools.TabIndex = 7;
+            this.RhombusTools.TabStop = false;
+            this.RhombusTools.Click += new System.EventHandler(this.RhombusTools_Click);
             // 
-            // radioButton8
+            // EllipseTools
             // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(29, 171);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(14, 13);
-            this.radioButton8.TabIndex = 9;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.UseVisualStyleBackColor = true;
+            this.EllipseTools.Image = ((System.Drawing.Image)(resources.GetObject("EllipseTools.Image")));
+            this.EllipseTools.Location = new System.Drawing.Point(29, 81);
+            this.EllipseTools.Name = "EllipseTools";
+            this.EllipseTools.Size = new System.Drawing.Size(25, 25);
+            this.EllipseTools.TabIndex = 6;
+            this.EllipseTools.TabStop = false;
+            this.EllipseTools.Click += new System.EventHandler(this.EllipseTools_Click);
             // 
-            // radioButton7
+            // RectangleTools
             // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(29, 152);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(14, 13);
-            this.radioButton7.TabIndex = 8;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.UseVisualStyleBackColor = true;
+            this.RectangleTools.Image = ((System.Drawing.Image)(resources.GetObject("RectangleTools.Image")));
+            this.RectangleTools.Location = new System.Drawing.Point(29, 50);
+            this.RectangleTools.Name = "RectangleTools";
+            this.RectangleTools.Size = new System.Drawing.Size(25, 25);
+            this.RectangleTools.TabIndex = 5;
+            this.RectangleTools.TabStop = false;
+            this.RectangleTools.Click += new System.EventHandler(this.RectangleTools_Click);
             // 
-            // radioButton6
+            // LineTools
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(29, 133);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(14, 13);
-            this.radioButton6.TabIndex = 7;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(29, 114);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(14, 13);
-            this.radioButton5.TabIndex = 6;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.UseVisualStyleBackColor = true;
-            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(29, 95);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(14, 13);
-            this.radioButton4.TabIndex = 5;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.UseVisualStyleBackColor = true;
-            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(29, 76);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(14, 13);
-            this.radioButton3.TabIndex = 4;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(29, 57);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(14, 13);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(29, 38);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(14, 13);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.LineTools.Image = ((System.Drawing.Image)(resources.GetObject("LineTools.Image")));
+            this.LineTools.Location = new System.Drawing.Point(29, 19);
+            this.LineTools.Name = "LineTools";
+            this.LineTools.Size = new System.Drawing.Size(25, 25);
+            this.LineTools.TabIndex = 4;
+            this.LineTools.TabStop = false;
+            this.LineTools.Click += new System.EventHandler(this.LineTools_Click);
             // 
             // groupBox1
             // 
@@ -303,7 +232,13 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Tools.ResumeLayout(false);
-            this.Tools.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EraserTriangle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RightTriangleTools)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IsoscelesTriangleTools)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RhombusTools)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EllipseTools)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RectangleTools)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LineTools)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
@@ -314,26 +249,20 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.RadioButton Tools1;
         private System.Windows.Forms.GroupBox Tools;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton11;
-        private System.Windows.Forms.RadioButton radioButton10;
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.RadioButton radioButton8;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Button buttonColor;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button buttonPipette;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.PictureBox LineTools;
+        private System.Windows.Forms.PictureBox EraserTriangle;
+        private System.Windows.Forms.PictureBox RightTriangleTools;
+        private System.Windows.Forms.PictureBox IsoscelesTriangleTools;
+        private System.Windows.Forms.PictureBox RhombusTools;
+        private System.Windows.Forms.PictureBox EllipseTools;
+        private System.Windows.Forms.PictureBox RectangleTools;
     }
 }
 
