@@ -111,34 +111,11 @@ namespace VectorMaster
             Bm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             pen = new Pen(colorDialog1.Color, trackBar1.Value);
             Mode = "Paint";
-        }
-
-        private void Tools1_CheckedChanged(object sender, EventArgs e)
-        {
             factory = new LineFactory();
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            factory = new RectangleFactory();
-        }
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            factory = new EllipseFactory();
-        }
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-            factory = new RhombusFactory();
-        } 
-        private void radioButton4_CheckedChanged(object sender, EventArgs e)
-        {
-            factory = new RightTriangleFactory();
-        }
+        
 
-        private void radioButton5_CheckedChanged(object sender, EventArgs e)
-        {
-            factory = new IsoscelesTriangleFactory();
-        }
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             pen.Width = trackBar1.Value;
@@ -158,7 +135,38 @@ namespace VectorMaster
             }
         }
 
-        private void buttonClear_Click(object sender, EventArgs e)
+
+        private void LineTools_Click(object sender, EventArgs e)
+        {
+            factory = new LineFactory();
+        }
+
+        private void RectangleTools_Click(object sender, EventArgs e)
+        {
+            factory = new RectangleFactory();
+        }
+
+        private void EllipseTools_Click(object sender, EventArgs e)
+        {
+            factory = new EllipseFactory();
+        }
+
+        private void RhombusTools_Click(object sender, EventArgs e)
+        {
+            factory = new RhombusFactory();
+        }
+
+        private void IsoscelesTriangleTools_Click(object sender, EventArgs e)
+        {
+            factory = new IsoscelesTriangleFactory();
+        }
+
+        private void RightTriangleTools_Click(object sender, EventArgs e)
+        {
+            factory = new RightTriangleFactory();
+        }
+
+        private void EraserTriangle_Click(object sender, EventArgs e)
         {
             figures.Clear();
 
@@ -167,7 +175,5 @@ namespace VectorMaster
 
             pictureBox1.Image = Bm;
         }
-
-        
     }
 }
