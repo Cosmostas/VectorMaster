@@ -22,7 +22,7 @@ namespace VectorMaster
         
         IFactory factory;
         
-        bool id_MouseDown = false;
+        bool isMouseDown = false;
 
         Point prevPoint = new Point(0,0);
 
@@ -69,14 +69,14 @@ namespace VectorMaster
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             prevPoint = e.Location;
-            id_MouseDown = true;
+            isMouseDown = true;
 
             currentFigure = factory.CreateFigure(pen);
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (id_MouseDown)
+            if (isMouseDown)
             {
                 Bitmap tmpBm = (Bitmap)Bm.Clone();
 
@@ -89,7 +89,7 @@ namespace VectorMaster
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
-            id_MouseDown = false;
+            isMouseDown = false;
 
             currentFigure.listPoints = currentFigure.Calculate(prevPoint, CalculatePoint(e.Location));
             figures.Add(currentFigure);
