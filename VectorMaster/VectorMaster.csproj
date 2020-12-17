@@ -76,11 +76,10 @@
     <Compile Include="Painters\EllipsePainter.cs" />
     <Compile Include="Painters\IPainter.cs" />
     <Compile Include="Figures\LineFigure.cs" />
-    <Compile Include="Painters\LinePainter.cs" />
+    <Compile Include="Painters\PolygonPainter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Figures\RectangleFigure.cs" />
-    <Compile Include="Painters\RectanglePainter.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace VectorMaster
 {
-    public class LinePainter : IPainter
+    public class PolygonPainter : IPainter
     {
         public void Paint(Bitmap Bm, Pen pen, List<Point> listPoints)
         {

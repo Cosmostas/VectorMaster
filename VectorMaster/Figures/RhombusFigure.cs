@@ -14,7 +14,7 @@ namespace VectorMaster.Figures
         {
             listPoints = new List<Point>();
 
-            painter = new LinePainter();
+            painter = new PolygonPainter();
             calculator = new RhombusCalculator();
 
         }
@@ -23,7 +23,7 @@ namespace VectorMaster.Figures
             listPoints = new List<Point>();
             this.pen = pen;
 
-            painter = new LinePainter();
+            painter = new PolygonPainter();
             calculator = new RhombusCalculator();
         }
         public RhombusFigure(Color color, int width)
@@ -31,7 +31,7 @@ namespace VectorMaster.Figures
             listPoints = new List<Point>();
             this.pen = new Pen(color, width);
 
-            painter = new LinePainter();
+            painter = new PolygonPainter();
             calculator = new RhombusCalculator();
         }
     }
