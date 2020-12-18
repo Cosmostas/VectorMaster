@@ -9,6 +9,6 @@ namespace VectorMaster.Movers
 {
     public interface IMover
     {
-        void Move(Point delta);
+        void Move(Point delta, List<Point> points);
     }
 }

@@ -14,6 +14,7 @@ namespace VectorMaster
     public partial class Form1 : Form
     {
         Bitmap Bm;
+        Graphics graphics;
         Pen pen;
 
         List<AFigure> figures = new List<AFigure>();
@@ -25,7 +26,6 @@ namespace VectorMaster
         bool isMouseDown = false;
 
         Point prevPoint = new Point(0,0);
-
 
         String Mode;
 
@@ -71,17 +71,42 @@ namespace VectorMaster
             prevPoint = e.Location;
             isMouseDown = true;
 
-            currentFigure = factory.CreateFigure(pen);
+            switch (Mode)
+            {
+                case "Paint":
+                    currentFigure = factory.CreateFigure(pen);
+                    break;
+                case "Move":
+                    currentFigure = null;
+                    foreach (AFigure figure in figures)
+                    {
+                        if (figure.CheckHit(e.Location))
+                        {
+                            currentFigure = figure;
+                            figures.Remove(currentFigure);
+                            DrawAll();
+                            pen = figure.pen;
+                            break;
+                        }
+                    }
+                    break;
+            }
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (isMouseDown)
+            if (isMouseDown && currentFigure != null)
             {
                 Bitmap tmpBm = (Bitmap)Bm.Clone();
-
+                graphics = Graphics.FromImage(tmpBm);
                 currentFigure.listPoints = currentFigure.Calculate(prevPoint, CalculatePoint(e.Location));
 
+                if (Mode == "Move")
+                {
+                    Point delta = new Point(e.Location.X - prevPoint.X, e.Location.Y - prevPoint.Y);
+                    currentFigure.Move(delta, currentFigure.listPoints);
+                    prevPoint = e.Location;
+                }
                 currentFigure.Paint(tmpBm);
                 pictureBox1.Image = tmpBm;
             }
@@ -166,14 +191,30 @@ namespace VectorMaster
             factory = new RightTriangleFactory();
         }
 
+        private void BrokenLineTools_Click(object sender, EventArgs e)
+        {
+            factory = new LineFactory();
+        }
+
         private void EraserTriangle_Click(object sender, EventArgs e)
         {
             figures.Clear();
 
-            Graphics graphics = Graphics.FromImage(Bm);
+            graphics = Graphics.FromImage(Bm);
             graphics.Clear(Color.White);
 
             pictureBox1.Image = Bm;
+        }
+
+        public void DrawAll()
+        {
+            Bm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            graphics = Graphics.FromImage(Bm);
+
+            foreach (AFigure figure in figures)
+            {
+                figure.Paint(Bm);
+            }
         }
     }
 }
