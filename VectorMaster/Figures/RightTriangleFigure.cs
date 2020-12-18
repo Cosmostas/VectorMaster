@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VectorMaster.Calculators;
+using VectorMaster.Checkers;
 
 namespace VectorMaster.Figures
 {
@@ -14,6 +15,7 @@ namespace VectorMaster.Figures
         {
             listPoints = new List<Point>();
 
+            checker = new PolygonChecker();
             painter = new PolygonPainter();
             calculator = new RightTriangleCalculator();
 
@@ -23,6 +25,7 @@ namespace VectorMaster.Figures
             listPoints = new List<Point>();
             this.pen = pen;
 
+            checker = new PolygonChecker();
             painter = new PolygonPainter();
             calculator = new RightTriangleCalculator();
         }
@@ -31,6 +34,7 @@ namespace VectorMaster.Figures
             listPoints = new List<Point>();
             this.pen = new Pen(color, width);
 
+            checker = new PolygonChecker();
             painter = new PolygonPainter();
             calculator = new RightTriangleCalculator();
         }

@@ -54,7 +54,9 @@
     <Compile Include="Calculators\RhombusCalculator.cs" />
     <Compile Include="Calculators\RectangleCalculator.cs" />
     <Compile Include="Calculators\RightTriangleCalculator.cs" />
+    <Compile Include="Checkers\EllipseChecker.cs" />
     <Compile Include="Checkers\IChecker.cs" />
+    <Compile Include="Checkers\PolygonChecker.cs" />
     <Compile Include="Factory\BrokenLineFactory.cs" />
     <Compile Include="Factory\EllipseFactory.cs" />
     <Compile Include="Factory\IFactory.cs" />
