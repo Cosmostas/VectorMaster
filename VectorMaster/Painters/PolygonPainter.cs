@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace VectorMaster
 {
-    public class LinePainter : IPainter
+    public class PolygonPainter : IPainter
     {
-        public void Paint(Bitmap Bm, Pen pen, List<Point> listPoints)
+        public void Paint(Bitmap bitmap, Pen pen, List<Point> listPoints)
         {
-            Graphics graphics = Graphics.FromImage(Bm);
+            Graphics graphics = Graphics.FromImage(bitmap);
             graphics.DrawPolygon(pen, listPoints.ToArray());
 
         }

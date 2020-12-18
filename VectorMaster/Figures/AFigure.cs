@@ -26,9 +26,9 @@ namespace VectorMaster
         {
             painter.Paint(Bm, pen, listPoints);
         }
-        public void Move(Point delta)
+        public void Move(Point delta, List<Point> listPoints)
         {
-            mover.Move(delta);
+            mover.Move(delta, listPoints);
         }
         public List<Point> Calculate(Point firstPoint, Point lastPoint)
         {

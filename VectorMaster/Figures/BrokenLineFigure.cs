@@ -5,39 +5,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VectorMaster.Calculators;
-using VectorMaster.Movers;
 
-namespace VectorMaster
+namespace VectorMaster.Figures
 {
-    public class RectangleFigure : AFigure
+    public class BrokenLineFigure : AFigure
     {
-        public RectangleFigure()
+        public BrokenLineFigure()
         {
             listPoints = new List<Point>();
 
             painter = new PolygonPainter();
-            calculator = new RectangleCalculator();
-            mover = new RectangleMover();
+            calculator = new BrokenLineCalculator();
 
         }
-        public RectangleFigure(Pen pen)
+        public BrokenLineFigure(Pen pen)
         {
             listPoints = new List<Point>();
             this.pen = pen;
 
             painter = new PolygonPainter();
-            calculator = new RectangleCalculator();
-            mover = new RectangleMover();
+            calculator = new BrokenLineCalculator();
         }
-        public RectangleFigure(Color color, int width)
+        public BrokenLineFigure(Color color, int width)
         {
             listPoints = new List<Point>();
             this.pen = new Pen(color, width);
 
             painter = new PolygonPainter();
-            calculator = new RectangleCalculator();
-            mover = new RectangleMover();
+            calculator = new BrokenLineCalculator();
         }
-
     }
 }

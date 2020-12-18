@@ -9,6 +9,6 @@ namespace VectorMaster.Checkers
 {
     public interface IChecker
     {
-        bool CheckHit(Point dot, List<Point> listPoints);
+        bool CheckHit(Point dot, List<Point> Points);
     }
 }

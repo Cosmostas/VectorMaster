@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculators\BrokenLineCalculator.cs" />
     <Compile Include="Calculators\EllipseCalculator.cs" />
     <Compile Include="Calculators\IsoscelesTriangleCalculator.cs" />
     <Compile Include="Calculators\LineCalculator.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="Calculators\RectangleCalculator.cs" />
     <Compile Include="Calculators\RightTriangleCalculator.cs" />
     <Compile Include="Checkers\IChecker.cs" />
+    <Compile Include="Factory\BrokenLineFactory.cs" />
     <Compile Include="Factory\EllipseFactory.cs" />
     <Compile Include="Factory\IFactory.cs" />
     <Compile Include="Factory\IsoscelesTriangleFactory.cs" />
@@ -61,6 +63,7 @@
     <Compile Include="Factory\RectangleFactory.cs" />
     <Compile Include="Factory\RhombusFactory.cs" />
     <Compile Include="Factory\RightTriangleFactory.cs" />
+    <Compile Include="Figures\BrokenLineFigure.cs" />
     <Compile Include="Figures\EllipseFigure.cs" />
     <Compile Include="Figures\IsoscelesTriangleFigure.cs" />
     <Compile Include="Figures\RhombusFigure.cs" />
@@ -73,14 +76,14 @@
     </Compile>
     <Compile Include="Figures\AFigure.cs" />
     <Compile Include="Movers\IMover.cs" />
+    <Compile Include="Movers\RectangleMover.cs" />
     <Compile Include="Painters\EllipsePainter.cs" />
     <Compile Include="Painters\IPainter.cs" />
     <Compile Include="Figures\LineFigure.cs" />
-    <Compile Include="Painters\LinePainter.cs" />
+    <Compile Include="Painters\PolygonPainter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Figures\RectangleFigure.cs" />
-    <Compile Include="Painters\RectanglePainter.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
