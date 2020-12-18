@@ -27,7 +27,7 @@ namespace VectorMaster
 
         Point prevPoint = new Point(0,0);
 
-        String Mode;
+        String mode;
 
         public Form1()
         {
@@ -71,7 +71,7 @@ namespace VectorMaster
             prevPoint = e.Location;
             isMouseDown = true;
 
-            switch (Mode)
+            switch (mode)
             {
                 case "Paint":
                     currentFigure = factory.CreateFigure(pen);
@@ -98,14 +98,16 @@ namespace VectorMaster
             if (isMouseDown && currentFigure != null)
             {
                 Bitmap tmpBm = (Bitmap)Bm.Clone();
-                graphics = Graphics.FromImage(tmpBm);
-                currentFigure.listPoints = currentFigure.Calculate(prevPoint, CalculatePoint(e.Location));
-
-                if (Mode == "Move")
+                switch (mode)
                 {
-                    Point delta = new Point(e.Location.X - prevPoint.X, e.Location.Y - prevPoint.Y);
-                    currentFigure.Move(delta, currentFigure.listPoints);
-                    prevPoint = e.Location;
+                    case "Paint":
+                        currentFigure.listPoints = currentFigure.Calculate(prevPoint, CalculatePoint(e.Location));
+                        break;
+                    case "Move":
+                        Point delta = new Point(e.Location.X - prevPoint.X, e.Location.Y - prevPoint.Y);
+                        currentFigure.Move(delta, currentFigure.listPoints);
+                        prevPoint = e.Location;
+                        break;
                 }
                 currentFigure.Paint(tmpBm);
                 pictureBox1.Image = tmpBm;
@@ -116,18 +118,25 @@ namespace VectorMaster
         {
             isMouseDown = false;
 
-            currentFigure.listPoints = currentFigure.Calculate(prevPoint, CalculatePoint(e.Location));
-            figures.Add(currentFigure);
+            if(mode == "Paint")
+            {
+                currentFigure.listPoints = currentFigure.Calculate(prevPoint, CalculatePoint(e.Location));
+            }
+            if(currentFigure != null)
+            {
+                figures.Add(currentFigure);
+                currentFigure.Paint(Bm);
+                pictureBox1.Image = Bm;
+            }
 
-            currentFigure.Paint(Bm);
-            pictureBox1.Image = Bm;
+
 
             prevPoint = e.Location;
 
-            if (Mode == "Pipete")
+            if (mode == "Pipete")
             {
                 pen.Color = Bm.GetPixel(e.Location.X, e.Location.Y);
-                Mode = "Paint";
+                mode = "Paint";
             }
         }
 
@@ -135,7 +144,7 @@ namespace VectorMaster
         {
             Bm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             pen = new Pen(colorDialog1.Color, trackBar1.Value);
-            Mode = "Paint";
+            mode = "Paint";
             factory = new LineFactory();
         }
 
@@ -149,7 +158,7 @@ namespace VectorMaster
 
         private void buttonPipette_Click(object sender, EventArgs e)
         {
-            Mode = "Pipete";
+            mode = "Pipete";
         }
 
         private void buttonColor_Click(object sender, EventArgs e)
@@ -214,6 +223,19 @@ namespace VectorMaster
             foreach (AFigure figure in figures)
             {
                 figure.Paint(Bm);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(mode == "Move")
+            {
+                mode = "Paint";
+            }
+            else
+            {
+                mode = "Move";
+
             }
         }
     }

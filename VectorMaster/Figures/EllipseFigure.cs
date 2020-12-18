@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using VectorMaster.Calculators;
 using VectorMaster.Painters;
+using VectorMaster.Checkers;
+using VectorMaster.Movers;
 
 namespace VectorMaster.Figures
 {
@@ -17,6 +19,8 @@ namespace VectorMaster.Figures
 
             painter = new EllipsePainter();
             calculator = new EllipseCalculator();
+            checker = new EllipseChecker();
+            mover = new EllipseMover();
 
         }
         public EllipseFigure(Pen pen)
@@ -26,6 +30,8 @@ namespace VectorMaster.Figures
 
             painter = new EllipsePainter();
             calculator = new EllipseCalculator();
+            checker = new EllipseChecker();
+            mover = new EllipseMover();
         }
         public EllipseFigure(Color color, int width)
         {
@@ -34,6 +40,8 @@ namespace VectorMaster.Figures
 
             painter = new EllipsePainter();
             calculator = new EllipseCalculator();
+            checker = new EllipseChecker();
+            mover = new EllipseMover();
         }
     }
 }

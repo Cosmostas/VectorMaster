@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VectorMaster.Calculators;
 using VectorMaster.Movers;
+using VectorMaster.Checkers;
 
 namespace VectorMaster
 {
@@ -18,6 +19,7 @@ namespace VectorMaster
             painter = new PolygonPainter();
             calculator = new RectangleCalculator();
             mover = new RectangleMover();
+            checker = new PolygonChecker();
 
         }
         public RectangleFigure(Pen pen)
@@ -28,6 +30,7 @@ namespace VectorMaster
             painter = new PolygonPainter();
             calculator = new RectangleCalculator();
             mover = new RectangleMover();
+            checker = new PolygonChecker();
         }
         public RectangleFigure(Color color, int width)
         {
@@ -37,6 +40,7 @@ namespace VectorMaster
             painter = new PolygonPainter();
             calculator = new RectangleCalculator();
             mover = new RectangleMover();
+            checker = new PolygonChecker();
         }
 
     }
