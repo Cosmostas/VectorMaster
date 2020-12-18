@@ -36,7 +36,7 @@ namespace VectorMaster
         }
         public bool CheckHit(Point dot)
         {
-            return checker.CheckHit(dot, listPoints);
+            return checker.CheckHit(dot, listPoints, (int)pen.Width);
         }
     }
 }
