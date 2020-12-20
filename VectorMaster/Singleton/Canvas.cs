@@ -26,6 +26,7 @@ namespace VectorMaster
         public IFactory factory;
 
         public IMouseHandler MouseHandler = new PaintMouseHandler();
+        public IMouseHandler LastMouseHandler = new PaintMouseHandler();
 
         public bool isMouseDown = false;
 

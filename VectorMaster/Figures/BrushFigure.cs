@@ -15,7 +15,7 @@ namespace VectorMaster.Figures
         {
             listPoints = new List<Point>();
 
-            painter = new LinePainter();
+            painter = new BrushPainter();
 
         }
         public BrushFigure(Pen pen)
@@ -23,14 +23,14 @@ namespace VectorMaster.Figures
             listPoints = new List<Point>();
             this.pen = pen;
 
-            painter = new LinePainter();
+            painter = new BrushPainter();
         }
         public BrushFigure(Color color, int width)
         {
             listPoints = new List<Point>();
             this.pen = new Pen(color, width);
 
-            painter = new LinePainter();
+            painter = new BrushPainter();
         }
     }
 }

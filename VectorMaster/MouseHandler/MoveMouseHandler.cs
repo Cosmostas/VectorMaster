@@ -28,7 +28,7 @@ namespace VectorMaster.MouseHandler
             }
         }
 
-        public void RealizeMouseMove(Point mouseLocation)
+        public void RealizeMouseMove()
         {
             Canvas canvas = Canvas.CreateCanvas();
 
@@ -39,7 +39,7 @@ namespace VectorMaster.MouseHandler
 
         }
 
-        public void RealizeMouseup(Point mouseLocation)
+        public void RealizeMouseup()
         {
             Canvas canvas = Canvas.CreateCanvas();
 
@@ -50,7 +50,7 @@ namespace VectorMaster.MouseHandler
 
             }
 
-            canvas.prevPoint = mouseLocation;
+            canvas.prevPoint = canvas.curPoint;
         }
     }
 }

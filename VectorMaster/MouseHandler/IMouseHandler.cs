@@ -11,8 +11,8 @@ namespace VectorMaster.MouseHandler
     public interface IMouseHandler
     {
         void RealizeMouseDown();
-        void RealizeMouseMove(Point mouseLocation);
-        void RealizeMouseup(Point mouseLocation);
+        void RealizeMouseMove();
+        void RealizeMouseup();
 
 
     }

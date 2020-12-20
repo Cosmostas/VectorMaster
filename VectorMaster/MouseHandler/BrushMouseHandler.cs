@@ -4,40 +4,38 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VectorMaster.Factory;
-
 
 namespace VectorMaster.MouseHandler
 {
-    public class PaintMouseHandler : IMouseHandler
+    public class BrushMouseHandler : IMouseHandler
     {
-
         public void RealizeMouseDown()
         {
             Canvas canvas = Canvas.CreateCanvas();
 
             canvas.currentFigure = canvas.factory.CreateFigure(canvas.pen);
+            canvas.currentFigure.listPoints.Add(canvas.curPoint);
         }
 
-        public void RealizeMouseMove() { 
-
+        public void RealizeMouseMove()
+        {
             Canvas canvas = Canvas.CreateCanvas();
 
-            canvas.currentFigure.listPoints = canvas.currentFigure.Calculate(canvas.prevPoint, canvas.CalculatePoint(canvas.curPoint));
+            canvas.currentFigure.listPoints.Add(canvas.curPoint);
+            canvas.prevPoint = canvas.curPoint;
             canvas.currentFigure.Paint();
-
         }
 
         public void RealizeMouseup()
         {
             Canvas canvas = Canvas.CreateCanvas();
 
-            canvas.currentFigure.listPoints = canvas.currentFigure.Calculate(canvas.prevPoint, canvas.CalculatePoint(canvas.curPoint));
-            if(canvas.currentFigure != null)
+            canvas.currentFigure.listPoints.Add(canvas.curPoint);
+
+            if (canvas.currentFigure != null)
             {
                 canvas.figures.Add(canvas.currentFigure);
                 canvas.currentFigure.Paint();
-
             }
 
             canvas.prevPoint = canvas.curPoint;

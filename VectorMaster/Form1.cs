@@ -109,7 +109,7 @@ namespace VectorMaster
 
                 Bitmap bitmap = (Bitmap)canvas.bitmap.Clone();
 
-                canvas.MouseHandler.RealizeMouseMove(e.Location);    
+                canvas.MouseHandler.RealizeMouseMove();    
 
             //    Point delta;
             //    switch (mode)
@@ -150,26 +150,10 @@ namespace VectorMaster
         {
             canvas.isMouseDown = false;
 
-            //if(mode == "Paint")
-            //{
-            //    currentFigure.listPoints = currentFigure.Calculate(prevPoint, CalculatePoint(e.Location));
-            //}
-            //if(currentFigure != null)
-            //{
-            //    figures.Add(currentFigure);
-            //    currentFigure.Paint();
-            //    pictureBox1.Image = canvas.bitmap;
-            //}
-
             pictureBox1.Image = canvas.bitmap;
-            canvas.MouseHandler.RealizeMouseup(e.Location);
-            //prevPoint = e.Location;
 
-            //if (mode == "Pipete")
-            //{
-            //    pen.Color = canvas.bitmap.GetPixel(e.Location.X, e.Location.Y);
-            //    mode = "Paint";
-            //}
+            canvas.MouseHandler.RealizeMouseup();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -196,7 +180,8 @@ namespace VectorMaster
 
         private void buttonPipette_Click(object sender, EventArgs e)
         {
-            canvas.mode = "Pipete";
+            canvas.LastMouseHandler = canvas.MouseHandler;
+            canvas.MouseHandler = new PipeteMouseHandler();
         }
 
         private void buttonColor_Click(object sender, EventArgs e)
@@ -210,43 +195,50 @@ namespace VectorMaster
 
         private void LineTools_Click(object sender, EventArgs e)
         {
-            canvas.mode = "Paint";
+            canvas.LastMouseHandler = canvas.MouseHandler;
+            canvas.MouseHandler = new PaintMouseHandler();
             canvas.factory = new LineFactory();
         }
 
         private void RectangleTools_Click(object sender, EventArgs e)
         {
-            canvas.mode = "Paint";
+            canvas.LastMouseHandler = canvas.MouseHandler;
+            canvas.MouseHandler = new PaintMouseHandler();
             canvas.factory = new RectangleFactory();
         }
 
         private void EllipseTools_Click(object sender, EventArgs e)
         {
-            canvas.mode = "Paint";
+            canvas.LastMouseHandler = canvas.MouseHandler;
+            canvas.MouseHandler = new PaintMouseHandler();
             canvas.factory = new EllipseFactory();
         }
 
         private void RhombusTools_Click(object sender, EventArgs e)
         {
-            canvas.mode = "Paint";
+            canvas.LastMouseHandler = canvas.MouseHandler;
+            canvas.MouseHandler = new PaintMouseHandler();
             canvas.factory = new RhombusFactory();
         }
 
         private void IsoscelesTriangleTools_Click(object sender, EventArgs e)
         {
-            canvas.mode = "Paint";
+            canvas.LastMouseHandler = canvas.MouseHandler;
+            canvas.MouseHandler = new PaintMouseHandler();
             canvas.factory = new IsoscelesTriangleFactory();
         }
 
         private void RightTriangleTools_Click(object sender, EventArgs e)
         {
-            canvas.mode = "Paint";
+            canvas.LastMouseHandler = canvas.MouseHandler;
+            canvas.MouseHandler = new PaintMouseHandler();
             canvas.factory = new RightTriangleFactory();
         }
 
         private void BrokenLineTools_Click(object sender, EventArgs e)
         {
-            canvas.mode = "Paint";
+            canvas.LastMouseHandler = canvas.MouseHandler;
+            canvas.MouseHandler = new PaintMouseHandler();
             canvas.factory = new LineFactory();
         }
 
@@ -263,37 +255,12 @@ namespace VectorMaster
 
         private void BrushTools_Click(object sender, EventArgs e)
         {
-            canvas.mode = "Brush";
+            canvas.LastMouseHandler = canvas.MouseHandler;
+            canvas.MouseHandler = new BrushMouseHandler();
 
             canvas.factory = new BrushFactory();
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if(canvas.mode == "Move")
-            {
-                canvas.mode = "Paint";
-            }
-            else
-            {
-                canvas.mode = "Move";
-
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (canvas.mode == "Rotate")
-            {
-                canvas.mode = "Paint";
-            }
-            else
-            {
-                canvas.mode = "Rotate";
-
-            }
-        }
 
         private void buttonMoveVertex_Click(object sender, EventArgs e)
         {
@@ -308,26 +275,12 @@ namespace VectorMaster
             }
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            canvas.MouseHandler = new PaintMouseHandler();
-        }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+
+        private void button1_Click(object sender, EventArgs e)
         {
+            canvas.LastMouseHandler = canvas.MouseHandler;
             canvas.MouseHandler = new MoveMouseHandler();
         }
-
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-            canvas.mode = "MoveVertex";
-        }
-
-        private void radioButton4_CheckedChanged(object sender, EventArgs e)
-        {
-            canvas.mode = "AddPoint";
-        }
-
-        
     }
 }
