@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BitmapSingleton.cs" />
+    <Compile Include="Singleton\Canvas.cs" />
     <Compile Include="Calculators\BrokenLineCalculator.cs" />
     <Compile Include="Calculators\EllipseCalculator.cs" />
     <Compile Include="Calculators\IsoscelesTriangleCalculator.cs" />
@@ -80,6 +80,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Figures\AFigure.cs" />
+    <Compile Include="MouseHandler\IMouseHandler.cs" />
+    <Compile Include="MouseHandler\PaintMouseHandler.cs" />
     <Compile Include="Movers\EllipseMover.cs" />
     <Compile Include="Movers\IMover.cs" />
     <Compile Include="Movers\PolygonMover.cs" />

@@ -16,7 +16,7 @@ namespace VectorMaster.Painters
 
         public void Paint(Pen pen, List<Point> listPoints)
         {
-            BitmapSingleton bitmapSingleton = BitmapSingleton.CreateBitmap();
+            Canvas bitmapSingleton = Canvas.CreateBitmap();
             Bitmap bitmap = bitmapSingleton.bitmap;
 
             Graphics graphics = Graphics.FromImage(bitmap);
