@@ -27,5 +27,10 @@ namespace VectorMaster.Painters
 
 
         }
+
+        public void Paint(Bitmap Bm, Pen pen, List<Point> listPoints, float angle)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

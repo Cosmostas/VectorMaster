@@ -16,5 +16,11 @@ namespace VectorMaster
 
         }
 
+        public void Paint(Bitmap bitmap, Pen pen, List<Point> listPoints, float angle)
+        {
+            Graphics graphics = Graphics.FromImage(bitmap);
+            graphics.RotateTransform(angle);
+            graphics.DrawPolygon(pen, listPoints.ToArray());
+        }
     }
 }

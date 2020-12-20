@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using VectorMaster.Movers;
 using VectorMaster.Calculators;
 using VectorMaster.Checkers;
+using VectorMaster.Rotators;
 
 namespace VectorMaster
 {
@@ -21,6 +22,7 @@ namespace VectorMaster
         protected IMover mover;
         protected ICalculator calculator;
         protected IChecker checker;
+        protected IRotator rotator;
 
         public void Paint(Bitmap Bm)
         {
@@ -37,6 +39,11 @@ namespace VectorMaster
         public bool CheckHit(Point dot)
         {
             return checker.CheckHit(dot, listPoints, (int)pen.Width);
+        }
+        public void Rotate(Bitmap Bm, Point delta)
+        {
+
+
         }
     }
 }
