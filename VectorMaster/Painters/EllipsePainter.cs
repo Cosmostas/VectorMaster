@@ -14,9 +14,12 @@ namespace VectorMaster.Painters
         int sizeX;
         int sizeY;
 
-        public void Paint(Bitmap Bm, Pen pen, List<Point> listPoints)
+        public void Paint(Pen pen, List<Point> listPoints)
         {
-            Graphics graphics = Graphics.FromImage(Bm);
+            BitmapSingleton bitmapSingleton = BitmapSingleton.CreateBitmap();
+            Bitmap bitmap = bitmapSingleton.bitmap;
+
+            Graphics graphics = Graphics.FromImage(bitmap);
 
             pX = listPoints[0].X;
             pY = listPoints[0].Y;
@@ -26,6 +29,11 @@ namespace VectorMaster.Painters
             graphics.DrawEllipse(pen, pX, pY, sizeX, sizeY);
 
 
+        }
+
+        public void Paint( Pen pen, List<Point> listPoints, float angle)
+        {
+            throw new NotImplementedException();
         }
     }
 }

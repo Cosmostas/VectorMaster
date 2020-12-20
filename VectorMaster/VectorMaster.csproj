@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BitmapSingleton.cs" />
     <Compile Include="Calculators\BrokenLineCalculator.cs" />
     <Compile Include="Calculators\EllipseCalculator.cs" />
     <Compile Include="Calculators\IsoscelesTriangleCalculator.cs" />
@@ -87,6 +88,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Figures\RectangleFigure.cs" />
+    <Compile Include="Rotators\IRotator.cs" />
+    <Compile Include="Rotators\Rotator.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -9,12 +9,22 @@ namespace VectorMaster
 {
     public class PolygonPainter : IPainter
     {
-        public void Paint(Bitmap bitmap, Pen pen, List<Point> listPoints)
+        public void Paint(Pen pen, List<Point> listPoints)
         {
+            BitmapSingleton bitmapSingleton = BitmapSingleton.CreateBitmap();
+            Bitmap bitmap = bitmapSingleton.bitmap;
             Graphics graphics = Graphics.FromImage(bitmap);
             graphics.DrawPolygon(pen, listPoints.ToArray());
 
         }
 
+        public void Paint(Pen pen, List<Point> listPoints, float angle)
+        {
+            BitmapSingleton bitmapSingleton = BitmapSingleton.CreateBitmap();
+            Bitmap bitmap = bitmapSingleton.bitmap;
+            Graphics graphics = Graphics.FromImage(bitmap);
+            graphics.RotateTransform(angle);
+            graphics.DrawPolygon(pen, listPoints.ToArray());
+        }
     }
 }

@@ -20,6 +20,7 @@ namespace VectorMaster
             calculator = new RectangleCalculator();
             mover = new RectangleMover();
             checker = new PolygonChecker();
+            rotator= new Rotators.Rotator();
 
         }
         public RectangleFigure(Pen pen)
@@ -31,6 +32,7 @@ namespace VectorMaster
             calculator = new RectangleCalculator();
             mover = new RectangleMover();
             checker = new PolygonChecker();
+            rotator = new Rotators.Rotator();
         }
         public RectangleFigure(Color color, int width)
         {
@@ -41,6 +43,7 @@ namespace VectorMaster
             calculator = new RectangleCalculator();
             mover = new RectangleMover();
             checker = new PolygonChecker();
+            rotator = new Rotators.Rotator();
         }
 
     }
