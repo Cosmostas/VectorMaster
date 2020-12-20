@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using System.Collections;
 using System.Drawing;
-using VectorPaintNUnitTest;
+using VectorMaster;
 
 namespace VectorPaintNUnitTest
 {
