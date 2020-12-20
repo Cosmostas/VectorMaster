@@ -26,5 +26,15 @@ namespace VectorMaster.Painters
             graphics.DrawLine(pen, p1X, p1Y, p2X, p2Y);*/
 
         }
+
+        public void Paint(Pen pen, List<Point> listPoints)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Paint(Pen pen, List<Point> listPoints, float angle)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

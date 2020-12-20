@@ -116,7 +116,8 @@ namespace VectorMaster
                         if (figure.CheckHit(e.Location))
                         {
                             SolidBrush redBrush = new SolidBrush(Color.Red);
-                            graphics = Graphics.FromImage(Bm);
+                            Graphics graphics;
+                            graphics = Graphics.FromImage(bitmapSingleton.bitmap);
                             graphics.FillEllipse(redBrush, e.X, e.Y, pen.Width, pen.Width);
                             currentFigure = figure;
                             currentFigure.listPoints.Add(e.Location);
