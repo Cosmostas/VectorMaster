@@ -54,6 +54,7 @@
     <Compile Include="Calculators\RhombusCalculator.cs" />
     <Compile Include="Calculators\RectangleCalculator.cs" />
     <Compile Include="Calculators\RightTriangleCalculator.cs" />
+    <Compile Include="Calculators\TriangleByThreePointsCalculator.cs" />
     <Compile Include="Checkers\EllipseChecker.cs" />
     <Compile Include="Checkers\IChecker.cs" />
     <Compile Include="Checkers\PolygonChecker.cs" />
@@ -65,11 +66,13 @@
     <Compile Include="Factory\RectangleFactory.cs" />
     <Compile Include="Factory\RhombusFactory.cs" />
     <Compile Include="Factory\RightTriangleFactory.cs" />
+    <Compile Include="Factory\TriangleByThreePointsFactory.cs" />
     <Compile Include="Figures\BrokenLineFigure.cs" />
     <Compile Include="Figures\EllipseFigure.cs" />
     <Compile Include="Figures\IsoscelesTriangleFigure.cs" />
     <Compile Include="Figures\RhombusFigure.cs" />
     <Compile Include="Figures\RightTriangleFigure.cs" />
+    <Compile Include="Figures\TriangleByThreePointsFactoryFigure.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
