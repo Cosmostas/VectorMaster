@@ -11,7 +11,7 @@ namespace VectorMaster.Calculators
     {
         public List<Point> Calculate(Point firstPoint, Point lastPoint)
         {
-            /*for (new Point = 1; new Point < (Point lastPoint ); new Point++)
+            /*for (new Point = 1; new Point = (Point lastPoint ); new Point++)
             {
                 return new List<Point>(3) { firstPoint, new Point(), lastPoint };
             }

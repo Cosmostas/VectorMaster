@@ -8,7 +8,7 @@ namespace VectorPaintNUnitTest
     public class RightTriangleTest
     {
         [Test, TestCaseSource(typeof(GetPointMock))]
-        public void SetPoints(Point firstPoint, Point lastPoint, Point[] Expected)
+        public void Calculate (Point firstPoint, Point lastPoint, Point[] Expected)
         {
             RightTriangleTest triangle = new RightTriangleTest();
             Point[] actual = triangle.Calculate(firstPoint, lastPoint).ToArray();

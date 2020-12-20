@@ -7,7 +7,6 @@ namespace VectorMasterTest
 {
     public class RectangleCalculatorTest
     {
-
         [Test, TestCaseSource(typeof(GetPointMock))]
         public void Calculate(Point firstPoint, Point lastPoint, Point[] Expected)
         {
