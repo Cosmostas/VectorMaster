@@ -24,9 +24,9 @@ namespace VectorMaster
         protected IChecker checker;
         protected IRotator rotator;
 
-        public void Paint(Bitmap Bm)
+        public void Paint()
         {
-            painter.Paint(Bm, pen, listPoints);
+            painter.Paint(pen, listPoints);
         }
         public void Move(Point delta, List<Point> listPoints)
         {

@@ -13,11 +13,12 @@ namespace VectorMaster
         public Bitmap bitmap { get; set; }
         private BitmapSingleton() {  }
 
-        static BitmapSingleton CreateBitmap()
+        public static BitmapSingleton CreateBitmap()
         {
             if(_instance == null)
             {
-                return new BitmapSingleton();
+                _instance = new BitmapSingleton();
+                return _instance;
             }
             else
             {

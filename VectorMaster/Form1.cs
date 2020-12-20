@@ -13,8 +13,7 @@ namespace VectorMaster
 {
     public partial class Form1 : Form
     {
-        Bitmap Bm;
-        Graphics graphics;
+        BitmapSingleton bitmapSingleton = BitmapSingleton.CreateBitmap();
         Pen pen;
 
         List<AFigure> figures = new List<AFigure>();
@@ -111,28 +110,31 @@ namespace VectorMaster
         {
             if (isMouseDown && currentFigure != null)
             {
-                Bitmap tmpBm = (Bitmap)Bm.Clone();
+
+                Bitmap bitmap = (Bitmap)bitmapSingleton.bitmap.Clone();
+
                 Point delta;
                 switch (mode)
                 {
                     case "Paint":
                         currentFigure.listPoints = currentFigure.Calculate(prevPoint, CalculatePoint(e.Location));
-                        currentFigure.Paint(tmpBm);
+                        currentFigure.Paint();
                         break;
                     case "Move":
                         delta = new Point(e.Location.X - prevPoint.X, e.Location.Y - prevPoint.Y);
                         currentFigure.Move(delta, currentFigure.listPoints);
                         prevPoint = e.Location;
-                        currentFigure.Paint(tmpBm);
+                        currentFigure.Paint();
                         break;
                     case "Rotate":
                         delta = new Point(e.Location.X - prevPoint.X, e.Location.Y - prevPoint.Y);
-                        currentFigure.Rotate(tmpBm, delta);
+                        currentFigure.Rotate(bitmap, delta);
                         prevPoint = e.Location;
                         break;
                 }
                 
-                pictureBox1.Image = tmpBm;
+                pictureBox1.Image = bitmapSingleton.bitmap;
+                bitmapSingleton.bitmap = (Bitmap)bitmap.Clone();
             }
         }
 
@@ -147,8 +149,8 @@ namespace VectorMaster
             if(currentFigure != null)
             {
                 figures.Add(currentFigure);
-                currentFigure.Paint(Bm);
-                pictureBox1.Image = Bm;
+                currentFigure.Paint();
+                pictureBox1.Image = bitmapSingleton.bitmap;
             }
 
 
@@ -157,14 +159,16 @@ namespace VectorMaster
 
             if (mode == "Pipete")
             {
-                pen.Color = Bm.GetPixel(e.Location.X, e.Location.Y);
+                pen.Color = bitmapSingleton.bitmap.GetPixel(e.Location.X, e.Location.Y);
                 mode = "Paint";
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Bm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            bitmapSingleton.bitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            Bitmap bitmap = (Bitmap)bitmapSingleton.bitmap;
+
             pen = new Pen(colorDialog1.Color, trackBar1.Value);
             mode = "Paint";
             factory = new LineFactory();
@@ -229,22 +233,24 @@ namespace VectorMaster
 
         private void EraserTriangle_Click(object sender, EventArgs e)
         {
+            Bitmap bitmap = (Bitmap)bitmapSingleton.bitmap.Clone();
             figures.Clear();
-
-            graphics = Graphics.FromImage(Bm);
+            Graphics graphics;
+            graphics = Graphics.FromImage(bitmap);
             graphics.Clear(Color.White);
 
-            pictureBox1.Image = Bm;
+            pictureBox1.Image = bitmap;
         }
 
         public void DrawAll()
         {
-            Bm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            graphics = Graphics.FromImage(Bm);
+            Bitmap bitmap = (Bitmap)bitmapSingleton.bitmap.Clone();
+            Graphics graphics;
+            graphics = Graphics.FromImage(bitmap);
 
             foreach (AFigure figure in figures)
             {
-                figure.Paint(Bm);
+                figure.Paint();
             }
         }
 
