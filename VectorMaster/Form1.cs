@@ -146,7 +146,7 @@ namespace VectorMaster
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
-            //isMouseDown = false;
+            canvas.isMouseDown = false;
 
             //if(mode == "Paint")
             //{
@@ -159,8 +159,8 @@ namespace VectorMaster
             //    pictureBox1.Image = canvas.bitmap;
             //}
 
-
-
+            pictureBox1.Image = canvas.bitmap;
+            canvas.MouseHandler.RealizeMouseMove(e.Location);
             //prevPoint = e.Location;
 
             //if (mode == "Pipete")

@@ -12,7 +12,7 @@ namespace VectorMaster.MouseHandler
     {
         void RealizeMouseDown();
         void RealizeMouseMove(Point mouseLocation);
-        void RealizeMouseup();
+        void RealizeMouseup(Point mouseLocation);
 
 
     }

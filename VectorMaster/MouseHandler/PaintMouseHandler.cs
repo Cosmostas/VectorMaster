@@ -28,9 +28,19 @@ namespace VectorMaster.MouseHandler
 
         }
 
-        public void RealizeMouseup()
+        public void RealizeMouseup(Point mouseLocation)
         {
-            throw new NotImplementedException();
+            Canvas canvas = Canvas.CreateBitmap();
+
+            canvas.currentFigure.listPoints = canvas.currentFigure.Calculate(canvas.prevPoint, canvas.CalculatePoint(mouseLocation));
+            if(canvas.currentFigure != null)
+            {
+                canvas.figures.Add(canvas.currentFigure);
+                canvas.currentFigure.Paint();
+
+            }
+
+            canvas.prevPoint = mouseLocation;
         }
     }
 }
