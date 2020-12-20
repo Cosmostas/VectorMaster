@@ -18,13 +18,7 @@ namespace VectorMaster.Painters
                 graphics.DrawPolygon(pen, (new List<Point> { listPoints[i], listPoints[i + 1] }).ToArray());
             }
             
-            
-            /*float p1X = listPoints[0].X;
-            float p1Y = listPoints[0].Y;
-            float p2X = listPoints[1].X;
-            float p2Y = listPoints[1].Y;
-            graphics.DrawLine(pen, p1X, p1Y, p2X, p2Y);*/
-
+           
         }
 
         public void Paint(Pen pen, List<Point> listPoints)
