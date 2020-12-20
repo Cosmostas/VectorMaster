@@ -14,14 +14,14 @@ namespace VectorMaster.MouseHandler
 
         public void RealizeMouseDown()
         {
-            Canvas canvas = Canvas.CreateBitmap();
+            Canvas canvas = Canvas.CreateCanvas();
 
             canvas.currentFigure = canvas.factory.CreateFigure(canvas.pen);
         }
 
         public void RealizeMouseMove(Point mouseLocation) { 
 
-            Canvas canvas = Canvas.CreateBitmap();
+            Canvas canvas = Canvas.CreateCanvas();
 
             canvas.currentFigure.listPoints = canvas.currentFigure.Calculate(canvas.prevPoint, canvas.CalculatePoint(mouseLocation));
             canvas.currentFigure.Paint();
@@ -30,7 +30,7 @@ namespace VectorMaster.MouseHandler
 
         public void RealizeMouseup(Point mouseLocation)
         {
-            Canvas canvas = Canvas.CreateBitmap();
+            Canvas canvas = Canvas.CreateCanvas();
 
             canvas.currentFigure.listPoints = canvas.currentFigure.Calculate(canvas.prevPoint, canvas.CalculatePoint(mouseLocation));
             if(canvas.currentFigure != null)

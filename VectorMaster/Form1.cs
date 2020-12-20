@@ -14,7 +14,7 @@ namespace VectorMaster
 {
     public partial class Form1 : Form
     {
-        Canvas canvas = Canvas.CreateBitmap();
+        Canvas canvas = Canvas.CreateCanvas();
 
         public Form1()
         {
@@ -98,10 +98,12 @@ namespace VectorMaster
             //        }
             //        break;
             //}
+            pictureBox1.Image = canvas.bitmap;
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
+            canvas.curPoint = e.Location;
             if (canvas.isMouseDown && canvas.currentFigure != null)
             {
 
@@ -160,7 +162,7 @@ namespace VectorMaster
             //}
 
             pictureBox1.Image = canvas.bitmap;
-            canvas.MouseHandler.RealizeMouseMove(e.Location);
+            canvas.MouseHandler.RealizeMouseup(e.Location);
             //prevPoint = e.Location;
 
             //if (mode == "Pipete")
@@ -172,7 +174,10 @@ namespace VectorMaster
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            canvas.pictureBox = pictureBox1;
+
             canvas.bitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+
             Bitmap bitmap = (Bitmap)canvas.bitmap;
 
             canvas.pen = new Pen(colorDialog1.Color, trackBar1.Value);
@@ -263,17 +268,6 @@ namespace VectorMaster
             canvas.factory = new BrushFactory();
         }
 
-        public void DrawAll()
-        {
-            Bitmap bitmap = (Bitmap)canvas.bitmap.Clone();
-            Graphics graphics;
-            graphics = Graphics.FromImage(bitmap);
-
-            foreach (AFigure figure in canvas.figures)
-            {
-                figure.Paint();
-            }
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -316,12 +310,12 @@ namespace VectorMaster
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            canvas.mode = "Paint";
+            canvas.MouseHandler = new PaintMouseHandler();
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            canvas.mode = "Move";
+            canvas.MouseHandler = new MoveMouseHandler();
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)

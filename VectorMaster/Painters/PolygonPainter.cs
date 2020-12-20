@@ -11,7 +11,7 @@ namespace VectorMaster
     {
         public void Paint(Pen pen, List<Point> listPoints)
         {
-            Canvas canvas = Canvas.CreateBitmap();
+            Canvas canvas = Canvas.CreateCanvas();
             Bitmap bitmap = canvas.bitmap;
             Graphics graphics = Graphics.FromImage(bitmap);
             graphics.DrawPolygon(pen, listPoints.ToArray());
@@ -20,7 +20,7 @@ namespace VectorMaster
 
         public void Paint(Pen pen, List<Point> listPoints, float angle)
         {
-            Canvas canvas = Canvas.CreateBitmap();
+            Canvas canvas = Canvas.CreateCanvas ();
             Bitmap bitmap = canvas.bitmap;
             Graphics graphics = Graphics.FromImage(bitmap);
             graphics.RotateTransform(angle);

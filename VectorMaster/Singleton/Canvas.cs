@@ -15,6 +15,7 @@ namespace VectorMaster
         static private Canvas _instance;
 
         public Bitmap bitmap;
+        public PictureBox pictureBox;
 
         public Pen pen;
 
@@ -29,6 +30,7 @@ namespace VectorMaster
         public bool isMouseDown = false;
 
         public Point prevPoint = new Point(0, 0);
+        public Point curPoint = new Point(0, 0);
 
         public String mode;
 
@@ -36,7 +38,7 @@ namespace VectorMaster
 
         private Canvas() {  }
 
-        public static Canvas CreateBitmap()
+        public static Canvas CreateCanvas()
         {
             if(_instance == null)
             {
@@ -46,6 +48,19 @@ namespace VectorMaster
             else
             {
                 return _instance;
+            }
+        }
+        public void DrawAll()
+        {
+
+            bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
+
+            Graphics graphics;
+            graphics = Graphics.FromImage(bitmap);
+
+            foreach (AFigure figure in figures)
+            {
+                figure.Paint();
             }
         }
         public Point CalculatePoint(Point mouseLocation)

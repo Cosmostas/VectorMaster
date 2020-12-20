@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MouseHandler\MoveMouseHandler.cs" />
     <Compile Include="Singleton\Canvas.cs" />
     <Compile Include="Calculators\BrokenLineCalculator.cs" />
     <Compile Include="Calculators\EllipseCalculator.cs" />
