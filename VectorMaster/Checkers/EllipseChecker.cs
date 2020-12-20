@@ -27,5 +27,10 @@ namespace VectorMaster.Checkers
                 return false;
             }
         }
+
+        public int CheckHitInVertex(Point dot, List<Point> Points)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

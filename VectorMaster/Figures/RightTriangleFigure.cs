@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VectorMaster.Calculators;
 using VectorMaster.Checkers;
+using VectorMaster.Movers;
 
 namespace VectorMaster.Figures
 {
@@ -15,9 +16,12 @@ namespace VectorMaster.Figures
         {
             listPoints = new List<Point>();
 
-            checker = new PolygonChecker();
             painter = new PolygonPainter();
             calculator = new RightTriangleCalculator();
+            mover = new PolygonMover();
+            moverVertex = new PolygonMover();
+            checker = new PolygonChecker();
+            checkerInVertex = new PolygonChecker();
 
         }
         public RightTriangleFigure(Pen pen)
@@ -25,18 +29,24 @@ namespace VectorMaster.Figures
             listPoints = new List<Point>();
             this.pen = pen;
 
-            checker = new PolygonChecker();
             painter = new PolygonPainter();
             calculator = new RightTriangleCalculator();
+            mover = new PolygonMover();
+            moverVertex = new PolygonMover();
+            checker = new PolygonChecker();
+            checkerInVertex = new PolygonChecker();
         }
         public RightTriangleFigure(Color color, int width)
         {
             listPoints = new List<Point>();
             this.pen = new Pen(color, width);
 
-            checker = new PolygonChecker();
             painter = new PolygonPainter();
             calculator = new RightTriangleCalculator();
+            mover = new PolygonMover();
+            moverVertex = new PolygonMover();
+            checker = new PolygonChecker();
+            checkerInVertex = new PolygonChecker();
         }
     }
 }

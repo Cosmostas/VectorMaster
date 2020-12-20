@@ -48,6 +48,13 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
+            this.buttonMoveVertex = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.BrushTools = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Tools.SuspendLayout();
@@ -62,14 +69,18 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BrushTools)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(193, 56);
+            this.pictureBox1.Location = new System.Drawing.Point(257, 69);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(658, 363);
+            this.pictureBox1.Size = new System.Drawing.Size(877, 446);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
@@ -79,6 +90,7 @@
             // Tools
             // 
             this.Tools.BackColor = System.Drawing.Color.Crimson;
+            this.Tools.Controls.Add(this.BrushTools);
             this.Tools.Controls.Add(this.BrokenLineTools);
             this.Tools.Controls.Add(this.EraserTriangle);
             this.Tools.Controls.Add(this.RightTriangleTools);
@@ -87,18 +99,21 @@
             this.Tools.Controls.Add(this.EllipseTools);
             this.Tools.Controls.Add(this.RectangleTools);
             this.Tools.Controls.Add(this.LineTools);
-            this.Tools.Location = new System.Drawing.Point(16, 56);
+            this.Tools.Location = new System.Drawing.Point(21, 69);
+            this.Tools.Margin = new System.Windows.Forms.Padding(4);
             this.Tools.Name = "Tools";
-            this.Tools.Size = new System.Drawing.Size(83, 363);
+            this.Tools.Padding = new System.Windows.Forms.Padding(4);
+            this.Tools.Size = new System.Drawing.Size(111, 447);
             this.Tools.TabIndex = 2;
             this.Tools.TabStop = false;
             // 
             // BrokenLineTools
             // 
             this.BrokenLineTools.Image = ((System.Drawing.Image)(resources.GetObject("BrokenLineTools.Image")));
-            this.BrokenLineTools.Location = new System.Drawing.Point(29, 206);
+            this.BrokenLineTools.Location = new System.Drawing.Point(39, 254);
+            this.BrokenLineTools.Margin = new System.Windows.Forms.Padding(4);
             this.BrokenLineTools.Name = "BrokenLineTools";
-            this.BrokenLineTools.Size = new System.Drawing.Size(25, 25);
+            this.BrokenLineTools.Size = new System.Drawing.Size(33, 31);
             this.BrokenLineTools.TabIndex = 10;
             this.BrokenLineTools.TabStop = false;
             this.BrokenLineTools.Click += new System.EventHandler(this.BrokenLineTools_Click);
@@ -106,9 +121,10 @@
             // EraserTriangle
             // 
             this.EraserTriangle.Image = ((System.Drawing.Image)(resources.GetObject("EraserTriangle.Image")));
-            this.EraserTriangle.Location = new System.Drawing.Point(29, 306);
+            this.EraserTriangle.Location = new System.Drawing.Point(39, 377);
+            this.EraserTriangle.Margin = new System.Windows.Forms.Padding(4);
             this.EraserTriangle.Name = "EraserTriangle";
-            this.EraserTriangle.Size = new System.Drawing.Size(25, 25);
+            this.EraserTriangle.Size = new System.Drawing.Size(33, 31);
             this.EraserTriangle.TabIndex = 10;
             this.EraserTriangle.TabStop = false;
             this.EraserTriangle.Click += new System.EventHandler(this.EraserTriangle_Click);
@@ -116,9 +132,10 @@
             // RightTriangleTools
             // 
             this.RightTriangleTools.Image = ((System.Drawing.Image)(resources.GetObject("RightTriangleTools.Image")));
-            this.RightTriangleTools.Location = new System.Drawing.Point(29, 174);
+            this.RightTriangleTools.Location = new System.Drawing.Point(39, 214);
+            this.RightTriangleTools.Margin = new System.Windows.Forms.Padding(4);
             this.RightTriangleTools.Name = "RightTriangleTools";
-            this.RightTriangleTools.Size = new System.Drawing.Size(25, 25);
+            this.RightTriangleTools.Size = new System.Drawing.Size(33, 31);
             this.RightTriangleTools.TabIndex = 9;
             this.RightTriangleTools.TabStop = false;
             this.RightTriangleTools.Click += new System.EventHandler(this.RightTriangleTools_Click);
@@ -126,9 +143,10 @@
             // IsoscelesTriangleTools
             // 
             this.IsoscelesTriangleTools.Image = ((System.Drawing.Image)(resources.GetObject("IsoscelesTriangleTools.Image")));
-            this.IsoscelesTriangleTools.Location = new System.Drawing.Point(29, 143);
+            this.IsoscelesTriangleTools.Location = new System.Drawing.Point(39, 176);
+            this.IsoscelesTriangleTools.Margin = new System.Windows.Forms.Padding(4);
             this.IsoscelesTriangleTools.Name = "IsoscelesTriangleTools";
-            this.IsoscelesTriangleTools.Size = new System.Drawing.Size(25, 25);
+            this.IsoscelesTriangleTools.Size = new System.Drawing.Size(33, 31);
             this.IsoscelesTriangleTools.TabIndex = 8;
             this.IsoscelesTriangleTools.TabStop = false;
             this.IsoscelesTriangleTools.Click += new System.EventHandler(this.IsoscelesTriangleTools_Click);
@@ -136,9 +154,10 @@
             // RhombusTools
             // 
             this.RhombusTools.Image = ((System.Drawing.Image)(resources.GetObject("RhombusTools.Image")));
-            this.RhombusTools.Location = new System.Drawing.Point(29, 112);
+            this.RhombusTools.Location = new System.Drawing.Point(39, 138);
+            this.RhombusTools.Margin = new System.Windows.Forms.Padding(4);
             this.RhombusTools.Name = "RhombusTools";
-            this.RhombusTools.Size = new System.Drawing.Size(25, 25);
+            this.RhombusTools.Size = new System.Drawing.Size(33, 31);
             this.RhombusTools.TabIndex = 7;
             this.RhombusTools.TabStop = false;
             this.RhombusTools.Click += new System.EventHandler(this.RhombusTools_Click);
@@ -146,9 +165,10 @@
             // EllipseTools
             // 
             this.EllipseTools.Image = ((System.Drawing.Image)(resources.GetObject("EllipseTools.Image")));
-            this.EllipseTools.Location = new System.Drawing.Point(29, 81);
+            this.EllipseTools.Location = new System.Drawing.Point(39, 100);
+            this.EllipseTools.Margin = new System.Windows.Forms.Padding(4);
             this.EllipseTools.Name = "EllipseTools";
-            this.EllipseTools.Size = new System.Drawing.Size(25, 25);
+            this.EllipseTools.Size = new System.Drawing.Size(33, 31);
             this.EllipseTools.TabIndex = 6;
             this.EllipseTools.TabStop = false;
             this.EllipseTools.Click += new System.EventHandler(this.EllipseTools_Click);
@@ -156,9 +176,10 @@
             // RectangleTools
             // 
             this.RectangleTools.Image = ((System.Drawing.Image)(resources.GetObject("RectangleTools.Image")));
-            this.RectangleTools.Location = new System.Drawing.Point(29, 50);
+            this.RectangleTools.Location = new System.Drawing.Point(39, 62);
+            this.RectangleTools.Margin = new System.Windows.Forms.Padding(4);
             this.RectangleTools.Name = "RectangleTools";
-            this.RectangleTools.Size = new System.Drawing.Size(25, 25);
+            this.RectangleTools.Size = new System.Drawing.Size(33, 31);
             this.RectangleTools.TabIndex = 5;
             this.RectangleTools.TabStop = false;
             this.RectangleTools.Click += new System.EventHandler(this.RectangleTools_Click);
@@ -166,9 +187,10 @@
             // LineTools
             // 
             this.LineTools.Image = ((System.Drawing.Image)(resources.GetObject("LineTools.Image")));
-            this.LineTools.Location = new System.Drawing.Point(29, 19);
+            this.LineTools.Location = new System.Drawing.Point(39, 23);
+            this.LineTools.Margin = new System.Windows.Forms.Padding(4);
             this.LineTools.Name = "LineTools";
-            this.LineTools.Size = new System.Drawing.Size(25, 25);
+            this.LineTools.Size = new System.Drawing.Size(33, 31);
             this.LineTools.TabIndex = 4;
             this.LineTools.TabStop = false;
             this.LineTools.Click += new System.EventHandler(this.LineTools_Click);
@@ -194,7 +216,7 @@
             this.textBox1.Location = new System.Drawing.Point(12, 225);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(86, 13);
+            this.textBox1.Size = new System.Drawing.Size(115, 15);
             this.textBox1.TabIndex = 4;
             this.textBox1.Text = "Толщина линии";
             // 
@@ -204,7 +226,7 @@
             this.buttonPipette.Location = new System.Drawing.Point(8, 338);
             this.buttonPipette.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPipette.Name = "buttonPipette";
-            this.buttonPipette.Size = new System.Drawing.Size(94, 43);
+            this.buttonPipette.Size = new System.Drawing.Size(125, 53);
             this.buttonPipette.TabIndex = 6;
             this.buttonPipette.Text = "Пипетка";
             this.buttonPipette.UseVisualStyleBackColor = true;
@@ -219,7 +241,7 @@
             this.trackBar1.Minimum = 1;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar1.Size = new System.Drawing.Size(45, 197);
+            this.trackBar1.Size = new System.Drawing.Size(56, 242);
             this.trackBar1.TabIndex = 4;
             this.trackBar1.Value = 1;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
@@ -231,7 +253,7 @@
             this.buttonColor.Location = new System.Drawing.Point(8, 283);
             this.buttonColor.Margin = new System.Windows.Forms.Padding(2);
             this.buttonColor.Name = "buttonColor";
-            this.buttonColor.Size = new System.Drawing.Size(94, 43);
+            this.buttonColor.Size = new System.Drawing.Size(125, 53);
             this.buttonColor.TabIndex = 5;
             this.buttonColor.Text = "Выбор цвета";
             this.buttonColor.UseVisualStyleBackColor = true;
@@ -239,13 +261,96 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(637, 441);
+            this.button1.Location = new System.Drawing.Point(849, 543);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 4;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonMoveVertex
+            // 
+            this.buttonMoveVertex.Location = new System.Drawing.Point(1000, 529);
+            this.buttonMoveVertex.Name = "buttonMoveVertex";
+            this.buttonMoveVertex.Size = new System.Drawing.Size(134, 49);
+            this.buttonMoveVertex.TabIndex = 5;
+            this.buttonMoveVertex.Text = "Премещение вершины";
+            this.buttonMoveVertex.UseVisualStyleBackColor = true;
+            this.buttonMoveVertex.Click += new System.EventHandler(this.buttonMoveVertex_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.radioButton4);
+            this.groupBox2.Controls.Add(this.radioButton3);
+            this.groupBox2.Controls.Add(this.radioButton2);
+            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Location = new System.Drawing.Point(257, 529);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(490, 69);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(243, 48);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(110, 21);
+            this.radioButton4.TabIndex = 3;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "radioButton4";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(7, 42);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(110, 21);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "radioButton3";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(243, 14);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(110, 21);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "radioButton2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(7, 21);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(110, 21);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // BrushTools
+            // 
+            this.BrushTools.Image = ((System.Drawing.Image)(resources.GetObject("BrushTools.Image")));
+            this.BrushTools.Location = new System.Drawing.Point(39, 293);
+            this.BrushTools.Margin = new System.Windows.Forms.Padding(4);
+            this.BrushTools.Name = "BrushTools";
+            this.BrushTools.Size = new System.Drawing.Size(33, 31);
+            this.BrushTools.TabIndex = 11;
+            this.BrushTools.TabStop = false;
+            this.BrushTools.Click += new System.EventHandler(this.BrushTools_Click);
             // 
             // button2
             // 
@@ -259,14 +364,17 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(991, 509);
+            this.ClientSize = new System.Drawing.Size(1321, 626);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.buttonMoveVertex);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Tools);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -284,6 +392,9 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BrushTools)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -309,6 +420,13 @@
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonMoveVertex;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.PictureBox BrushTools;
     }
 }
 

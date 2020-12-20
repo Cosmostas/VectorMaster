@@ -28,6 +28,8 @@ namespace VectorMaster
 
         String mode;
 
+        int index;
+
         public Form1()
         {
             InitializeComponent();
@@ -75,6 +77,9 @@ namespace VectorMaster
                 case "Paint":
                     currentFigure = factory.CreateFigure(pen);
                     break;
+                case "Brush":
+                    currentFigure = factory.CreateFigure(pen);
+                    break;
                 case "Move":
                     currentFigure = null;
                     foreach (AFigure figure in figures)
@@ -85,6 +90,37 @@ namespace VectorMaster
                             figures.Remove(currentFigure);
                             DrawAll();
                             pen = figure.pen;
+                            break;
+                        }
+                    }
+                    break;
+                case "MoveVertex":
+                    currentFigure = null;
+                    foreach (AFigure figure in figures)
+                    {
+                        if (figure.CheckHitInVertex(e.Location) != -1)
+                        {
+                            index = figure.CheckHitInVertex(e.Location);
+                            currentFigure = figure;
+                            figures.Remove(currentFigure);
+                            DrawAll();
+                            pen = figure.pen;
+                            break;
+                        }
+                    }
+                    break;
+                case "AddPoint":
+                    currentFigure = null;
+                    foreach (AFigure figure in figures)
+                    {
+                        if (figure.CheckHit(e.Location))
+                        {
+                            SolidBrush redBrush = new SolidBrush(Color.Red);
+                            graphics = Graphics.FromImage(Bm);
+                            graphics.FillEllipse(redBrush, e.X, e.Y, pen.Width, pen.Width);
+                            currentFigure = figure;
+                            currentFigure.listPoints.Add(e.Location);
+                            figures.Remove(currentFigure);
                             break;
                         }
                     }
@@ -120,11 +156,21 @@ namespace VectorMaster
                         currentFigure.listPoints = currentFigure.Calculate(prevPoint, CalculatePoint(e.Location));
                         currentFigure.Paint();
                         break;
+                    case "Brush":
+                        currentFigure.listPoints.Add(prevPoint);
+                        currentFigure.listPoints.Add(e.Location);
+                        prevPoint = e.Location;
+                        break;
                     case "Move":
                         delta = new Point(e.Location.X - prevPoint.X, e.Location.Y - prevPoint.Y);
                         currentFigure.Move(delta, currentFigure.listPoints);
                         prevPoint = e.Location;
                         currentFigure.Paint();
+                        break;
+                    case "MoveVertex":
+                        Point deltaRelocatable = new Point(e.Location.X - (currentFigure.listPoints[index]).X, e.Location.Y - (currentFigure.listPoints[index]).Y);
+                        currentFigure.MovePoint(index, deltaRelocatable);
+                        prevPoint = e.Location;
                         break;
                     case "Rotate":
                         delta = new Point(e.Location.X - prevPoint.X, e.Location.Y - prevPoint.Y);
@@ -198,36 +244,43 @@ namespace VectorMaster
 
         private void LineTools_Click(object sender, EventArgs e)
         {
+            mode = "Paint";
             factory = new LineFactory();
         }
 
         private void RectangleTools_Click(object sender, EventArgs e)
         {
+            mode = "Paint";
             factory = new RectangleFactory();
         }
 
         private void EllipseTools_Click(object sender, EventArgs e)
         {
+            mode = "Paint";
             factory = new EllipseFactory();
         }
 
         private void RhombusTools_Click(object sender, EventArgs e)
         {
+            mode = "Paint";
             factory = new RhombusFactory();
         }
 
         private void IsoscelesTriangleTools_Click(object sender, EventArgs e)
         {
+            mode = "Paint";
             factory = new IsoscelesTriangleFactory();
         }
 
         private void RightTriangleTools_Click(object sender, EventArgs e)
         {
+            mode = "Paint";
             factory = new RightTriangleFactory();
         }
 
         private void BrokenLineTools_Click(object sender, EventArgs e)
         {
+            mode = "Paint";
             factory = new LineFactory();
         }
 
@@ -240,6 +293,13 @@ namespace VectorMaster
             graphics.Clear(Color.White);
 
             pictureBox1.Image = bitmap;
+        }
+
+        private void BrushTools_Click(object sender, EventArgs e)
+        {
+            mode = "Brush";
+            
+            factory = new BrushFactory();
         }
 
         public void DrawAll()
@@ -279,5 +339,40 @@ namespace VectorMaster
 
             }
         }
+
+        private void buttonMoveVertex_Click(object sender, EventArgs e)
+        {
+            if (mode == "MoveVertex")
+            {
+                mode = "Paint";
+            }
+            else
+            {
+                mode = "MoveVertex";
+
+            }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            mode = "Paint";
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            mode = "Move";
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            mode = "MoveVertex";
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            mode = "AddPoint";
+        }
+
+        
     }
 }

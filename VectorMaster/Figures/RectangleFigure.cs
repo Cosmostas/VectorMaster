@@ -18,9 +18,11 @@ namespace VectorMaster
 
             painter = new PolygonPainter();
             calculator = new RectangleCalculator();
-            mover = new RectangleMover();
+            mover = new PolygonMover();
+            moverVertex = new PolygonMover();
             checker = new PolygonChecker();
             rotator= new Rotators.Rotator();
+            checkerInVertex = new PolygonChecker();
 
         }
         public RectangleFigure(Pen pen)
@@ -30,8 +32,10 @@ namespace VectorMaster
 
             painter = new PolygonPainter();
             calculator = new RectangleCalculator();
-            mover = new RectangleMover();
+            mover = new PolygonMover();
+            moverVertex = new PolygonMover();
             checker = new PolygonChecker();
+            checkerInVertex = new PolygonChecker();
             rotator = new Rotators.Rotator();
         }
         public RectangleFigure(Color color, int width)
@@ -41,9 +45,11 @@ namespace VectorMaster
 
             painter = new PolygonPainter();
             calculator = new RectangleCalculator();
-            mover = new RectangleMover();
+            mover = new PolygonMover();
+            moverVertex = new PolygonMover();
             checker = new PolygonChecker();
             rotator = new Rotators.Rotator();
+            checkerInVertex = new PolygonChecker();
         }
 
     }

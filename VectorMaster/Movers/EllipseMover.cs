@@ -14,5 +14,10 @@ namespace VectorMaster.Movers
             Point p = points[0];
             points[0] = new Point(p.X + delta.X, p.Y + delta.Y);
         }
+
+        public void MovePoint(int index, Point delta, List<Point> points)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

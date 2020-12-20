@@ -59,6 +59,7 @@
     <Compile Include="Checkers\IChecker.cs" />
     <Compile Include="Checkers\PolygonChecker.cs" />
     <Compile Include="Factory\BrokenLineFactory.cs" />
+    <Compile Include="Factory\BrushFactory.cs" />
     <Compile Include="Factory\EllipseFactory.cs" />
     <Compile Include="Factory\IFactory.cs" />
     <Compile Include="Factory\IsoscelesTriangleFactory.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Factory\RhombusFactory.cs" />
     <Compile Include="Factory\RightTriangleFactory.cs" />
     <Compile Include="Figures\BrokenLineFigure.cs" />
+    <Compile Include="Figures\BrushFigure.cs" />
     <Compile Include="Figures\EllipseFigure.cs" />
     <Compile Include="Figures\IsoscelesTriangleFigure.cs" />
     <Compile Include="Figures\RhombusFigure.cs" />
@@ -80,10 +82,11 @@
     <Compile Include="Figures\AFigure.cs" />
     <Compile Include="Movers\EllipseMover.cs" />
     <Compile Include="Movers\IMover.cs" />
-    <Compile Include="Movers\RectangleMover.cs" />
+    <Compile Include="Movers\PolygonMover.cs" />
     <Compile Include="Painters\EllipsePainter.cs" />
     <Compile Include="Painters\IPainter.cs" />
     <Compile Include="Figures\LineFigure.cs" />
+    <Compile Include="Painters\LinePainter.cs" />
     <Compile Include="Painters\PolygonPainter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

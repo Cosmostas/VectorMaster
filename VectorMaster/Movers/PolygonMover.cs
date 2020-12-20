@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace VectorMaster.Movers
 {
-    public class RectangleMover : IMover
+    public class PolygonMover : IMover
     {
         public void Move(Point delta, List<Point> points)
         {
@@ -16,6 +16,12 @@ namespace VectorMaster.Movers
                 Point p = points[i];
                 points[i] = new Point(p.X + delta.X, p.Y + delta.Y);
             }
+        }
+
+        public void MovePoint(int index, Point delta, List<Point> points)
+        {
+            Point p = points[index];
+            points[index] = new Point(p.X + delta.X, p.Y + delta.Y);
         }
     }
 }

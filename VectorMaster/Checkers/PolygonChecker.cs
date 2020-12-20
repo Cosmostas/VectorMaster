@@ -40,6 +40,20 @@ namespace VectorMaster.Checkers
             return false;
         }
 
+        int index = -1;
+
+        public int CheckHitInVertex(Point dot, List<Point> Points)
+        {
+            for (int i = 0; i < Points.Count; i++)
+            {
+                if (Math.Abs(Points[i].X - dot.X) < 5 && Math.Abs(Points[i].Y - dot.Y) < 5)
+                {
+                    index = i;
+                }
+            }
+            return index;
+        }
+
     }
 }
 

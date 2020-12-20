@@ -20,22 +20,32 @@ namespace VectorMaster
 
         protected IPainter painter;
         protected IMover mover;
+        protected IMover moverVertex;
         protected ICalculator calculator;
         protected IChecker checker;
         protected IRotator rotator;
+        protected IChecker checkerInVertex;
 
         public void Paint()
         {
             painter.Paint(pen, listPoints);
         }
+
         public void Move(Point delta, List<Point> listPoints)
         {
             mover.Move(delta, listPoints);
         }
+
+        public void MovePoint(int index, Point delta)
+        {
+            moverVertex.MovePoint(index, delta, listPoints);
+        }
+
         public List<Point> Calculate(Point firstPoint, Point lastPoint)
         {
             return calculator.Calculate(firstPoint, lastPoint);
         }
+
         public bool CheckHit(Point dot)
         {
             return checker.CheckHit(dot, listPoints, (int)pen.Width);
@@ -45,5 +55,11 @@ namespace VectorMaster
 
 
         }
+
+        public int CheckHitInVertex(Point dot)
+        {
+            return checkerInVertex.CheckHitInVertex(dot, listPoints);
+        }
+        
     }
 }
