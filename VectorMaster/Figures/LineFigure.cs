@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VectorMaster.Calculators;
+using VectorMaster.Checkers;
+using VectorMaster.Movers;
+
 namespace VectorMaster
 {
     public class LineFigure : AFigure
@@ -15,6 +18,8 @@ namespace VectorMaster
 
             painter = new PolygonPainter();
             calculator = new LineCalculator();
+            mover = new PolygonMover();
+            checker = new PolygonChecker();
 
         } 
         public LineFigure(Pen pen)
@@ -24,6 +29,8 @@ namespace VectorMaster
 
             painter = new PolygonPainter();
             calculator = new LineCalculator();
+            mover = new PolygonMover();
+            checker = new PolygonChecker();
         }
         public LineFigure(Color color, int width)
         {
@@ -32,6 +39,8 @@ namespace VectorMaster
 
             painter = new PolygonPainter();
             calculator = new LineCalculator();
+            mover = new PolygonMover();
+            checker = new PolygonChecker();
         }
 
     }

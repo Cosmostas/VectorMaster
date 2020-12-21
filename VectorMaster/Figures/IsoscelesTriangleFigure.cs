@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VectorMaster.Calculators;
+using VectorMaster.Checkers;
+using VectorMaster.Movers;
 
 namespace VectorMaster.Figures
 {
@@ -16,6 +18,11 @@ namespace VectorMaster.Figures
 
             painter = new PolygonPainter();
             calculator = new IsoscelesTriangleCalculator();
+            mover = new PolygonMover();
+            moverVertex = new PolygonMover();
+            checker = new PolygonChecker();
+            checkerInVertex = new PolygonChecker();
+            
 
         }
         public IsoscelesTriangleFigure(Pen pen)
@@ -25,6 +32,10 @@ namespace VectorMaster.Figures
 
             painter = new PolygonPainter();
             calculator = new IsoscelesTriangleCalculator();
+            mover = new PolygonMover();
+            checker = new PolygonChecker();
+            checkerInVertex = new PolygonChecker();
+            moverVertex = new PolygonMover();
         }
         public IsoscelesTriangleFigure(Color color, int width)
         {
@@ -33,6 +44,10 @@ namespace VectorMaster.Figures
 
             painter = new PolygonPainter();
             calculator = new IsoscelesTriangleCalculator();
+            mover = new PolygonMover();
+            checker = new PolygonChecker();
+            checkerInVertex = new PolygonChecker();
+            moverVertex = new PolygonMover();
         }
     }
 }

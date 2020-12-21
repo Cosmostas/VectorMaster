@@ -12,19 +12,53 @@ namespace VectorMaster.Checkers
         public bool CheckHit(Point dot, List<Point> Points, int Width)
         {
             Point Center = new Point(Points[0].X + Points[1].X / 2, Points[0].Y + Points[1].Y / 2);
-            if (
-                Math.Abs(dot.X  - Center.X) > Points[1].X - Width
-                &&
-                Math.Abs(dot.Y - Center.Y) < Points[1].Y + Width
-                )
-            {
-                return true;
-            }
 
+            Point startAccuracyLine = new Point(dot.X - Width / 2, dot.Y - Width / 2);
+            Point endAccuracyLine = new Point(dot.X + Width / 2, dot.Y + Width / 2);
+
+            float a = Points[1].X / 2;
+            float b = Points[1].Y / 2;
+
+            if( 
+                (Math.Pow(startAccuracyLine.X - Center.X, 2) / (a*a) + Math.Pow(startAccuracyLine.Y - Center.Y, 2) / (b*b) <= 1
+                &&
+                Math.Pow(endAccuracyLine.X - Center.X, 2) / (a * a) + Math.Pow(endAccuracyLine.Y - Center.Y, 2) / (b * b) >= 1)
+                ||
+                (Math.Pow(startAccuracyLine.X - Center.X, 2) / (a * a) + Math.Pow(startAccuracyLine.Y - Center.Y, 2) / (b * b) >= 1
+                &&
+                Math.Pow(endAccuracyLine.X - Center.X, 2) / (a * a) + Math.Pow(endAccuracyLine.Y - Center.Y, 2) / (b * b) <= 1)
+                )
+                { return true; }
             else
             {
-                return false;
+                startAccuracyLine = new Point(dot.X - Width / 2, dot.Y + Width / 2);
+                endAccuracyLine = new Point(dot.X + Width / 2, dot.Y - Width / 2);
+                if (
+                     (Math.Pow(startAccuracyLine.X - Center.X, 2) / (a * a) + Math.Pow(startAccuracyLine.Y - Center.Y, 2) / (b * b) <= 1
+                     &&
+                     Math.Pow(endAccuracyLine.X - Center.X, 2) / (a * a) + Math.Pow(endAccuracyLine.Y - Center.Y, 2) / (b * b) >= 1)
+                     ||
+                     (Math.Pow(startAccuracyLine.X - Center.X, 2) / (a * a) + Math.Pow(startAccuracyLine.Y - Center.Y, 2) / (b * b) >= 1
+                     &&
+                     Math.Pow(endAccuracyLine.X - Center.X, 2) / (a * a) + Math.Pow(endAccuracyLine.Y - Center.Y, 2) / (b * b) <= 1)
+                     )
+                { return true; }
+                else
+                {
+                    return false;
+
+                }
             }
+        }
+
+        public int CheckHitInVertex(Point dot, List<Point> Points)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Point> IChecker.CheckHit(Point dot, List<Point> Points, int Width)
+        {
+            throw new NotImplementedException();
         }
     }
 }

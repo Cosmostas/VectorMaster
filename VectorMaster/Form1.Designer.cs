@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Tools = new System.Windows.Forms.GroupBox();
+            this.BrushTools = new System.Windows.Forms.PictureBox();
             this.BrokenLineTools = new System.Windows.Forms.PictureBox();
             this.EraserTriangle = new System.Windows.Forms.PictureBox();
             this.RightTriangleTools = new System.Windows.Forms.PictureBox();
@@ -47,9 +48,11 @@
             this.buttonColor = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonMoveVertex = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Tools.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BrushTools)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrokenLineTools)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EraserTriangle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RightTriangleTools)).BeginInit();
@@ -65,6 +68,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(193, 56);
             this.pictureBox1.Name = "pictureBox1";
@@ -78,6 +82,7 @@
             // Tools
             // 
             this.Tools.BackColor = System.Drawing.Color.Crimson;
+            this.Tools.Controls.Add(this.BrushTools);
             this.Tools.Controls.Add(this.BrokenLineTools);
             this.Tools.Controls.Add(this.EraserTriangle);
             this.Tools.Controls.Add(this.RightTriangleTools);
@@ -91,6 +96,16 @@
             this.Tools.Size = new System.Drawing.Size(83, 363);
             this.Tools.TabIndex = 2;
             this.Tools.TabStop = false;
+            // 
+            // BrushTools
+            // 
+            this.BrushTools.Image = ((System.Drawing.Image)(resources.GetObject("BrushTools.Image")));
+            this.BrushTools.Location = new System.Drawing.Point(29, 238);
+            this.BrushTools.Name = "BrushTools";
+            this.BrushTools.Size = new System.Drawing.Size(25, 25);
+            this.BrushTools.TabIndex = 11;
+            this.BrushTools.TabStop = false;
+            this.BrushTools.Click += new System.EventHandler(this.BrushTools_Click);
             // 
             // BrokenLineTools
             // 
@@ -178,11 +193,11 @@
             this.groupBox1.Controls.Add(this.buttonPipette);
             this.groupBox1.Controls.Add(this.trackBar1);
             this.groupBox1.Controls.Add(this.buttonColor);
-            this.groupBox1.Location = new System.Drawing.Point(873, 33);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(875, 56);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(109, 386);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(105, 332);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
@@ -190,8 +205,8 @@
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Control;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(12, 225);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Location = new System.Drawing.Point(12, 112);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(86, 13);
             this.textBox1.TabIndex = 4;
@@ -200,8 +215,8 @@
             // buttonPipette
             // 
             this.buttonPipette.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonPipette.Location = new System.Drawing.Point(8, 338);
-            this.buttonPipette.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonPipette.Location = new System.Drawing.Point(4, 285);
+            this.buttonPipette.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPipette.Name = "buttonPipette";
             this.buttonPipette.Size = new System.Drawing.Size(94, 43);
             this.buttonPipette.TabIndex = 6;
@@ -212,8 +227,8 @@
             // trackBar1
             // 
             this.trackBar1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.trackBar1.Location = new System.Drawing.Point(35, 23);
-            this.trackBar1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.trackBar1.Location = new System.Drawing.Point(34, 19);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(2);
             this.trackBar1.Maximum = 11;
             this.trackBar1.Minimum = 1;
             this.trackBar1.Name = "trackBar1";
@@ -227,8 +242,8 @@
             // 
             this.buttonColor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonColor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonColor.Location = new System.Drawing.Point(8, 283);
-            this.buttonColor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonColor.Location = new System.Drawing.Point(4, 218);
+            this.buttonColor.Margin = new System.Windows.Forms.Padding(2);
             this.buttonColor.Name = "buttonColor";
             this.buttonColor.Size = new System.Drawing.Size(94, 43);
             this.buttonColor.TabIndex = 5;
@@ -236,9 +251,20 @@
             this.buttonColor.UseVisualStyleBackColor = true;
             this.buttonColor.Click += new System.EventHandler(this.buttonColor_Click);
             // 
+            // buttonMoveVertex
+            // 
+            this.buttonMoveVertex.Location = new System.Drawing.Point(879, 404);
+            this.buttonMoveVertex.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonMoveVertex.Name = "buttonMoveVertex";
+            this.buttonMoveVertex.Size = new System.Drawing.Size(100, 40);
+            this.buttonMoveVertex.TabIndex = 5;
+            this.buttonMoveVertex.Text = "Премещение вершины";
+            this.buttonMoveVertex.UseVisualStyleBackColor = true;
+            this.buttonMoveVertex.Click += new System.EventHandler(this.buttonMoveVertex_Click);
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(637, 441);
+            this.button1.Location = new System.Drawing.Point(887, 462);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -251,6 +277,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(991, 509);
+            this.Controls.Add(this.buttonMoveVertex);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Tools);
@@ -260,6 +287,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Tools.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BrushTools)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrokenLineTools)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EraserTriangle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RightTriangleTools)).EndInit();
@@ -295,6 +323,8 @@
         private System.Windows.Forms.PictureBox RectangleTools;
         private System.Windows.Forms.PictureBox BrokenLineTools;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Button buttonMoveVertex;
+        private System.Windows.Forms.PictureBox BrushTools;
         private System.Windows.Forms.Button button1;
     }
 }

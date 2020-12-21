@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VectorMaster.Calculators;
+using VectorMaster.Checkers;
+using VectorMaster.Movers;
 
 namespace VectorMaster.Figures
 {
@@ -16,6 +18,10 @@ namespace VectorMaster.Figures
 
             painter = new PolygonPainter();
             calculator = new RhombusCalculator();
+            mover = new PolygonMover();
+            moverVertex = new PolygonMover();
+            checker = new PolygonChecker();
+            checkerInVertex = new PolygonChecker();
 
         }
         public RhombusFigure(Pen pen)
@@ -25,6 +31,10 @@ namespace VectorMaster.Figures
 
             painter = new PolygonPainter();
             calculator = new RhombusCalculator();
+            mover = new PolygonMover();
+            moverVertex = new PolygonMover();
+            checker = new PolygonChecker();
+            checkerInVertex = new PolygonChecker();
         }
         public RhombusFigure(Color color, int width)
         {
@@ -33,6 +43,10 @@ namespace VectorMaster.Figures
 
             painter = new PolygonPainter();
             calculator = new RhombusCalculator();
+            mover = new PolygonMover();
+            moverVertex = new PolygonMover();
+            checker = new PolygonChecker();
+            checkerInVertex = new PolygonChecker();
         }
     }
 }

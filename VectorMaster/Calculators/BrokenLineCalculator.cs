@@ -11,6 +11,11 @@ namespace VectorMaster.Calculators
     {
         public List<Point> Calculate(Point firstPoint, Point lastPoint)
         {
+            Canvas canvas = Canvas.CreateCanvas();
+            List <Point>Points = new List<Point>(canvas.currentFigure.listPoints);
+            
+            Points.Add(canvas.curPoint);
+            return Points;
 
             /*for (new Point = 1; new Point = (Point lastPoint ); new Point++)
             {

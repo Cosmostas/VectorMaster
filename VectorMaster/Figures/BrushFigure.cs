@@ -9,31 +9,28 @@ using VectorMaster.Painters;
 
 namespace VectorMaster.Figures
 {
-    public class BrokenLineFigure : AFigure
+    public class BrushFigure : AFigure
     {
-        public BrokenLineFigure()
+        public BrushFigure()
         {
             listPoints = new List<Point>();
 
-            painter = new BrokenLinePainter();
-            calculator = new BrokenLineCalculator();
-            
+            painter = new BrushPainter();
+
         }
-        public BrokenLineFigure(Pen pen)
+        public BrushFigure(Pen pen)
         {
             listPoints = new List<Point>();
             this.pen = pen;
 
-            painter = new BrokenLinePainter();
-            calculator = new BrokenLineCalculator();
+            painter = new BrushPainter();
         }
-        public BrokenLineFigure(Color color, int width)
+        public BrushFigure(Color color, int width)
         {
             listPoints = new List<Point>();
             this.pen = new Pen(color, width);
 
-            painter = new BrokenLinePainter();
-            calculator = new BrokenLineCalculator();
+            painter = new BrushPainter();
         }
     }
 }
