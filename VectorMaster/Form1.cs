@@ -256,15 +256,7 @@ namespace VectorMaster
 
         private void buttonMoveVertex_Click(object sender, EventArgs e)
         {
-            if (canvas.mode == "MoveVertex")
-            {
-                canvas.mode = "Paint";
-            }
-            else
-            {
-                canvas.mode = "MoveVertex";
-
-            }
+            canvas.MouseHandler = new MovePartsFigureMouseHandler();
         }
 
 

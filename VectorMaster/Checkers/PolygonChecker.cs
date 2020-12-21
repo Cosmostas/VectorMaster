@@ -13,10 +13,13 @@ namespace VectorMaster.Checkers
 
         int index = -1;
 
-        public bool CheckHit(Point dot, List<Point> Points, int Width)
+        public List<Point> CheckHit(Point dot, List<Point> Points, int Width)
         {
-            Point startAccuracyLine = new Point(dot.X - Width / 2, dot.Y - Width / 2);
-            Point endAccuracyLine = new Point(dot.X + Width / 2, dot.Y + Width / 2);
+            Point startAccuracyLine1 = new Point(dot.X - Width / 2, dot.Y - Width / 2);
+            Point endAccuracyLine1 = new Point(dot.X + Width / 2, dot.Y + Width / 2);
+            
+            Point startAccuracyLine2 = new Point(dot.X - Width / 2, dot.Y + Width / 2);
+            Point endAccuracyLine2 = new Point(dot.X + Width / 2, dot.Y - Width / 2);
            
             List<Point> figurePoints = new List<Point>(Points);
             figurePoints.Add(Points[0]);
@@ -28,41 +31,63 @@ namespace VectorMaster.Checkers
             {
                 startFigureLine = figurePoints[i];
                 endFigureLine = figurePoints[i + 1];
-                
-                if(startFigureLine.X != endFigureLine.X)
+
+                if(
+                    checkСrossingLine(startAccuracyLine1, endAccuracyLine1, startFigureLine, endFigureLine, dot, Width)
+                    ||
+                    checkСrossingLine(startAccuracyLine2, endAccuracyLine2, startFigureLine, endFigureLine, dot, Width)
+                    )
                 {
-                    float k = (endFigureLine.Y - startFigureLine.Y) / (endFigureLine.X - startFigureLine.X);
-                    float b = endFigureLine.Y - endFigureLine.X * k;
+                    return new List<Point>(2) { startFigureLine, endFigureLine};
+                }
 
-                    float y = dot.X * k + b;
 
-                    if(y >= endAccuracyLine.Y && y <= startAccuracyLine.Y
-                        ||
-                        y <= endAccuracyLine.Y && y >= startAccuracyLine.Y
-                        )
+            }
+            return null;
+        }
+
+        bool checkСrossingLine(Point startAccuracyLine, Point endAccuracyLine, Point startFigureLine, Point endFigureLine, Point dot, int Width)
+        {
+            if (Math.Abs(startFigureLine.X -  endFigureLine.X) > Width)
+            {
+                float k = (float)(endFigureLine.Y - startFigureLine.Y) / (float)(endFigureLine.X - startFigureLine.X);
+                float b = endFigureLine.Y - endFigureLine.X * k;
+
+                float y = dot.X * k + b;
+
+                if (y >= endAccuracyLine.Y && y <= startAccuracyLine.Y
+                    ||
+                    y <= endAccuracyLine.Y && y >= startAccuracyLine.Y
+                    )
+                {
+                    float x = dot.X;
+                    if (x >= endFigureLine.X && x <= startFigureLine.X
+                       ||
+                       x <= endFigureLine.X && x >= startFigureLine.X
+                       )
+                    {
+                        return true;
+                    }
+
+                }
+            }
+            else
+            {
+                float x = startFigureLine.X;
+                if (x >= endAccuracyLine.X && x <= startAccuracyLine.X
+                    ||
+                    x <= endAccuracyLine.X && x >= startAccuracyLine.X
+                    )
+                {
+                    float y = dot.Y;
+                    if (y >= endFigureLine.Y && y <= startFigureLine.Y
+                       ||
+                       y <= endFigureLine.Y && y >= startFigureLine.Y
+                       )
                     {
                         return true;
                     }
                 }
-                else
-                {
-                    float x = startFigureLine.X;
-                    if (x >= endAccuracyLine.X && x <= startAccuracyLine.X
-                        ||
-                        x <= endAccuracyLine.X && x >= startAccuracyLine.X
-                        )
-                    {
-                        float y = dot.Y;
-                        if (y >= endFigureLine.Y && y <= startFigureLine.Y
-                           ||
-                           y <= endFigureLine.Y && y >= startFigureLine.Y
-                           )
-                        {
-                            return true;
-                        }
-                    }
-                }
-                
             }
             return false;
         }

@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace VectorMaster.MouseHandler
 {
-    public class MoveMouseHandler : IMouseHandler
+    public class MovePartsFigureMouseHandler : IMouseHandler
     {
+        List<Point> points;
         public void RealizeMouseDown()
         {
             Canvas canvas = Canvas.CreateCanvas();
@@ -17,7 +18,8 @@ namespace VectorMaster.MouseHandler
 
             foreach (AFigure figure in canvas.figures)
             {
-                if (figure.CheckHit(canvas.curPoint) != null)
+                points = figure.CheckHit(canvas.curPoint);
+                if (points != null)
                 {
                     canvas.currentFigure = figure;
                     canvas.figures.Remove(canvas.currentFigure);
@@ -33,7 +35,7 @@ namespace VectorMaster.MouseHandler
             Canvas canvas = Canvas.CreateCanvas();
 
             Point delta = new Point(canvas.curPoint.X - canvas.prevPoint.X, canvas.curPoint.Y - canvas.prevPoint.Y);
-            canvas.currentFigure.Move(delta, canvas.currentFigure.listPoints);
+            canvas.currentFigure.MovePoints(delta, points);
 
             canvas.prevPoint = canvas.curPoint;
             canvas.currentFigure.Paint();
@@ -45,7 +47,7 @@ namespace VectorMaster.MouseHandler
             Canvas canvas = Canvas.CreateCanvas();
 
             if (canvas.currentFigure != null)
-            {   
+            {
                 canvas.figures.Add(canvas.currentFigure);
                 canvas.currentFigure.Paint();
 

@@ -40,20 +40,21 @@ namespace VectorMaster
         {
             mover.Move(delta, listPoints);
         }
-
-        public void MovePoint(int index, Point delta)
+        public void MovePoints(Point delta, List<Point> listPoints)
         {
-            moverVertex.MovePoint(index, delta, listPoints);
+            mover.MovePoints(delta, listPoints);
         }
+
 
         public List<Point> Calculate(Point firstPoint, Point lastPoint)
         {
             return calculator.Calculate(firstPoint, lastPoint);
         }
 
-        public bool CheckHit(Point dot)
+        public List<Point> CheckHit(Point dot)
         {
             return checker.CheckHit(dot, listPoints, (int)pen.Width);
+     
         }
         public void Rotate(Bitmap Bm, Point delta)
         {
