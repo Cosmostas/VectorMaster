@@ -142,6 +142,7 @@ namespace VectorMaster
             //    }
                 
                 pictureBox1.Image = canvas.bitmap;
+
                 canvas.bitmap = (Bitmap)bitmap.Clone();
             }
         }
@@ -149,10 +150,10 @@ namespace VectorMaster
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             canvas.isMouseDown = false;
+            canvas.MouseHandler.RealizeMouseup();
 
             pictureBox1.Image = canvas.bitmap;
 
-            canvas.MouseHandler.RealizeMouseup();
 
         }
 
