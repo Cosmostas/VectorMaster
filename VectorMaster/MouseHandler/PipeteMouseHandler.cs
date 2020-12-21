@@ -16,8 +16,7 @@ namespace VectorMaster.MouseHandler
 
         public void RealizeMouseMove()
         {
-            Canvas canvas = Canvas.CreateCanvas();
-            canvas.prevPoint = canvas.curPoint;
+
         }
 
         public void RealizeMouseup()

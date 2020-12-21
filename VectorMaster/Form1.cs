@@ -24,7 +24,6 @@ namespace VectorMaster
    
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            canvas.prevPoint = e.Location;
             canvas.isMouseDown = true;
 
             canvas.MouseHandler.RealizeMouseDown();
@@ -104,47 +103,7 @@ namespace VectorMaster
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             canvas.curPoint = e.Location;
-            if (canvas.isMouseDown && canvas.currentFigure != null)
-            {
-
-                Bitmap bitmap = (Bitmap)canvas.bitmap.Clone();
-
-                canvas.MouseHandler.RealizeMouseMove();    
-
-            //    Point delta;
-            //    switch (mode)
-            //    {
-            //        case "Paint":
-            //            currentFigure.listPoints = currentFigure.Calculate(prevPoint, CalculatePoint(e.Location));
-            //            currentFigure.Paint();
-            //            break;
-            //        case "Brush":
-            //            currentFigure.listPoints.Add(prevPoint);
-            //            currentFigure.listPoints.Add(e.Location);
-            //            prevPoint = e.Location;
-            //            break;
-            //        case "Move":
-            //            delta = new Point(e.Location.X - prevPoint.X, e.Location.Y - prevPoint.Y);
-            //            currentFigure.Move(delta, currentFigure.listPoints);
-            //            prevPoint = e.Location;
-            //            currentFigure.Paint();
-            //            break;
-            //        case "MoveVertex":
-            //            Point deltaRelocatable = new Point(e.Location.X - (currentFigure.listPoints[index]).X, e.Location.Y - (currentFigure.listPoints[index]).Y);
-            //            currentFigure.MovePoint(index, deltaRelocatable);
-            //            prevPoint = e.Location;
-            //            break;
-            //        case "Rotate":
-            //            delta = new Point(e.Location.X - prevPoint.X, e.Location.Y - prevPoint.Y);
-            //            currentFigure.Rotate(bitmap, delta);
-            //            prevPoint = e.Location;
-            //            break;
-            //    }
-                
-                pictureBox1.Image = canvas.bitmap;
-
-                canvas.bitmap = (Bitmap)bitmap.Clone();
-            }
+            canvas.MouseHandler.RealizeMouseMove();
         }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
@@ -167,8 +126,8 @@ namespace VectorMaster
 
             canvas.pen = new Pen(colorDialog1.Color, trackBar1.Value);
 
-            canvas.MouseHandler = new PaintMouseHandler();
-            canvas.factory = new LineFactory();
+            canvas.MouseHandler = new BrokenLineMouseHandler();
+            canvas.factory = new BrokenLineFactory();
         }
 
         
@@ -231,40 +190,32 @@ namespace VectorMaster
 
         private void BrokenLineTools_Click(object sender, EventArgs e)
         {
-            canvas.MouseHandler = new PaintMouseHandler();
-            canvas.factory = new LineFactory();
+            canvas.MouseHandler = new BrokenLineMouseHandler();
+            canvas.factory = new BrokenLineFactory();
         }
 
         private void EraserTriangle_Click(object sender, EventArgs e)
         {
-            Bitmap bitmap = (Bitmap)canvas.bitmap.Clone();
+            canvas.bitmap = new Bitmap(canvas.pictureBox.Width, canvas.pictureBox.Height);
             canvas.figures.Clear();
             Graphics graphics;
-            graphics = Graphics.FromImage(bitmap);
+            graphics = Graphics.FromImage(canvas.bitmap);
             graphics.Clear(Color.White);
 
-            pictureBox1.Image = bitmap;
+            pictureBox1.Image = canvas.bitmap;
         }
 
         private void BrushTools_Click(object sender, EventArgs e)
         {
-            canvas.MouseHandler = new BrushMouseHandler();
+            canvas.MouseHandler = new PaintMouseHandler();
 
-            canvas.factory = new BrushFactory();
+            canvas.factory = new BrokenLineFactory();
         }
 
 
         private void buttonMoveVertex_Click(object sender, EventArgs e)
         {
-            if (canvas.mode == "MoveVertex")
-            {
-                canvas.mode = "Paint";
-            }
-            else
-            {
-                canvas.mode = "MoveVertex";
-
-            }
+            canvas.MouseHandler = new MovePartsFigureMouseHandler();
         }
 
 

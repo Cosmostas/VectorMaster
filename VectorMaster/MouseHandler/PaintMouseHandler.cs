@@ -17,19 +17,28 @@ namespace VectorMaster.MouseHandler
             Canvas canvas = Canvas.CreateCanvas();
 
             canvas.currentFigure = canvas.factory.CreateFigure(canvas.pen);
+
+            canvas.prevPoint = canvas.curPoint;
         }
 
-        public void RealizeMouseMove() { 
+        public void RealizeMouseMove() {
 
             Canvas canvas = Canvas.CreateCanvas();
+            Bitmap bitmap = (Bitmap)canvas.bitmap.Clone();
 
-            canvas.currentFigure.listPoints = canvas.currentFigure.Calculate(canvas.prevPoint, canvas.CalculatePoint(canvas.curPoint));
-            canvas.currentFigure.Paint();
+            if(canvas.currentFigure != null && canvas.isMouseDown)
+            {
+                canvas.currentFigure.listPoints = canvas.currentFigure.Calculate(canvas.prevPoint, canvas.CalculatePoint(canvas.curPoint));
+                canvas.currentFigure.Paint();
+            }
 
+            canvas.pictureBox.Image = canvas.bitmap;
+            canvas.bitmap = (Bitmap)bitmap.Clone();
         }
 
         public void RealizeMouseup()
         {
+
             Canvas canvas = Canvas.CreateCanvas();
 
             canvas.currentFigure.listPoints = canvas.currentFigure.Calculate(canvas.prevPoint, canvas.CalculatePoint(canvas.curPoint));
