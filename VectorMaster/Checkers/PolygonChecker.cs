@@ -11,10 +11,17 @@ namespace VectorMaster.Checkers
     {
         
 
-        int index = -1;
-
         public List<Point> CheckHit(Point dot, List<Point> Points, int Width)
         {
+            for (int i = 0; i < Points.Count; i++)
+            {
+                if (Math.Abs(Points[i].X - dot.X) < Width / 2 && Math.Abs(Points[i].Y - dot.Y) < Width / 2)
+                {
+                    return new List<Point>(1) { Points[i] };
+                }
+            }
+
+
             Point startAccuracyLine1 = new Point(dot.X - Width / 2, dot.Y - Width / 2);
             Point endAccuracyLine1 = new Point(dot.X + Width / 2, dot.Y + Width / 2);
             
@@ -90,18 +97,6 @@ namespace VectorMaster.Checkers
                 }
             }
             return false;
-        }
-
-        public int CheckHitInVertex(Point dot, List<Point> Points)
-        {
-            for (int i = 0; i < Points.Count; i++)
-            {
-                if (Math.Abs(Points[i].X - dot.X) < 5 && Math.Abs(Points[i].Y - dot.Y) < 5)
-                {
-                    index = i;
-                }
-            }
-            return index;
         }
 
     }

@@ -22,6 +22,7 @@ namespace VectorMaster.Movers
         {
             Canvas canvas = Canvas.CreateCanvas();
             List<Point> figurePoints = new List<Point>(canvas.currentFigure.listPoints);
+            figurePoints.Add(canvas.currentFigure.listPoints[0]);
             int j = 0;
             for (int i = 0; i < figurePoints.Count; ++i)
             {
@@ -30,9 +31,9 @@ namespace VectorMaster.Movers
                     break;
                 }
 
-                    if (canvas.currentFigure.listPoints[i] == points[j])
+                    if (figurePoints[i] == points[j])
                     {
-                        Point p = canvas.currentFigure.listPoints[i];
+                        Point p = figurePoints[i];
                         if(i == figurePoints.Count - 1)
                         {
                             canvas.currentFigure.listPoints[0] = new Point(p.X + delta.X, p.Y + delta.Y);

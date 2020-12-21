@@ -10,6 +10,5 @@ namespace VectorMaster.Checkers
     public interface IChecker
     {
         List<Point> CheckHit(Point dot, List<Point> Points, int Width);
-        int CheckHitInVertex(Point dot, List<Point> Points);
     }
 }

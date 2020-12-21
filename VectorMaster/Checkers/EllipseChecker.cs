@@ -51,11 +51,6 @@ namespace VectorMaster.Checkers
             }
         }
 
-        public int CheckHitInVertex(Point dot, List<Point> Points)
-        {
-            throw new NotImplementedException();
-        }
-
         List<Point> IChecker.CheckHit(Point dot, List<Point> Points, int Width)
         {
             throw new NotImplementedException();
