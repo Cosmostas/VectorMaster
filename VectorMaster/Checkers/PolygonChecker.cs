@@ -19,19 +19,85 @@ namespace VectorMaster.Checkers
             Point endAccuracyLine = new Point(dot.X + Width / 2, dot.Y + Width / 2);
 
             List<Point> figurePoints = new List<Point>(Points);
-            figurePoints.Add(Points[Points.Count - 1]);
+            figurePoints.Add(Points[0]);
 
             Point startFigureLine;
             Point endFigureLine;
 
             for (int i = 0; i < figurePoints.Count - 1; ++i)
             {
-                startFigureLine = Points[i];
-                endFigureLine = Points[i + 1];
+                startFigureLine = figurePoints[i];
+                endFigureLine = figurePoints[i + 1];
+                
+                if(
+                    checkDotUpperLine(startFigureLine, endFigureLine, startAccuracyLine)
+                    &&
+                    checkDotUndetLine(startFigureLine, endFigureLine, endAccuracyLine)
+                    &&
+                    (
+                        checkDotInsideLine(startFigureLine, endFigureLine, startAccuracyLine)
+                        ||
+                        checkDotInsideLine(startFigureLine, endFigureLine, endAccuracyLine)
+                    )
+                    )
+                {
+                    return true;
+                }
+                
+            }
+            return false;
+        }
 
+        bool checkDotUpperLine(Point startFigureLine, Point endFigureLine, Point point)
+        {
+            if(point.X == startFigureLine.X || point.Y == startFigureLine.Y)
+            {
+                return true;
+            } 
+            if( (endFigureLine.X - startFigureLine.X) / (point.X - startFigureLine.X) - (endFigureLine.Y - startFigureLine.Y) / (point.Y - startFigureLine.Y) >= 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
+        bool checkDotUndetLine(Point startFigureLine, Point endFigureLine, Point point)
+        {
+            if (point.X == startFigureLine.X || point.Y == startFigureLine.Y)
+            {
+                return true;
+            }
+            if ((endFigureLine.X - startFigureLine.X) / (point.X - startFigureLine.X) - (endFigureLine.Y - startFigureLine.Y) / (point.Y - startFigureLine.Y) <= 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        bool checkDotInsideLine(Point startFigureLine, Point endFigureLine, Point point)
+        {
+
+            if(point.X >= startFigureLine.X && point.X <= endFigureLine.X || point.X <= startFigureLine.X && point.X >= endFigureLine.X)
+            {
+                if(point.Y >= startFigureLine.Y && point.Y <= endFigureLine.Y || point.Y <= startFigureLine.Y && point.X >= endFigureLine.Y)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
         public int CheckHitInVertex(Point dot, List<Point> Points)
         {
             for (int i = 0; i < Points.Count; i++)
