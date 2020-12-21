@@ -30,6 +30,10 @@ namespace VectorMaster
         {
             painter.Paint(pen, listPoints);
         }
+        public void PaintDots()
+        {
+            painter.PaintDots(pen, listPoints);
+        }
         public void Move(Point delta, List<Point> listPoints)
         {
             mover.Move(delta, listPoints);

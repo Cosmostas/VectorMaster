@@ -36,8 +36,16 @@ namespace VectorMaster
                 Graphics graphics = Graphics.FromImage(bitmap);
                 SolidBrush blackBrush = new SolidBrush(Color.Black);
                 SolidBrush whiteBrush = new SolidBrush(Color.White);
-                graphics.FillEllipse(blackBrush, point.X, point.Y, pen.Width + 1, pen.Width + 1);
-                graphics.FillEllipse(whiteBrush, point.X, point.Y, pen.Width - 1, pen.Width - 1);
+
+                //int radius = (int)(pen.Width + 6);
+
+                //graphics.DrawEllipse(new Pen(Color.White, pen.Width / 3), point.X  - radius, point.Y - radius, 2*radius, 2*radius);
+
+                //radius = (int)(pen.Width) / 2;
+                //graphics.DrawEllipse(new Pen(Color.Blue, pen.Width / 3), point.X - radius, point.Y - radius, 2 * radius, 2 * radius);
+
+                int radius = (int)(pen.Width - 6);
+                graphics.DrawEllipse(new Pen(Color.White, pen.Width / 3), point.X - radius, point.Y - radius, 2 * radius, 2 * radius);
 
             }
         }

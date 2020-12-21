@@ -47,6 +47,8 @@ namespace VectorMaster.MouseHandler
 
                 canvas.prevPoint = canvas.curPoint;
                 canvas.currentFigure.Paint();
+                canvas.currentFigure.PaintDots();
+
             }
 
             canvas.prevPoint = canvas.curPoint;
@@ -65,6 +67,7 @@ namespace VectorMaster.MouseHandler
 
                 canvas.figures.Add(canvas.currentFigure);
                 canvas.currentFigure.Paint();
+                canvas.currentFigure.PaintDots();
             }
 
             canvas.prevPoint = canvas.curPoint;
