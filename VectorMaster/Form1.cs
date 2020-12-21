@@ -180,7 +180,6 @@ namespace VectorMaster
 
         private void buttonPipette_Click(object sender, EventArgs e)
         {
-            canvas.LastMouseHandler = canvas.MouseHandler;
             canvas.MouseHandler = new PipeteMouseHandler();
         }
 
@@ -195,49 +194,42 @@ namespace VectorMaster
 
         private void LineTools_Click(object sender, EventArgs e)
         {
-            canvas.LastMouseHandler = canvas.MouseHandler;
             canvas.MouseHandler = new PaintMouseHandler();
             canvas.factory = new LineFactory();
         }
 
         private void RectangleTools_Click(object sender, EventArgs e)
         {
-            canvas.LastMouseHandler = canvas.MouseHandler;
             canvas.MouseHandler = new PaintMouseHandler();
             canvas.factory = new RectangleFactory();
         }
 
         private void EllipseTools_Click(object sender, EventArgs e)
         {
-            canvas.LastMouseHandler = canvas.MouseHandler;
             canvas.MouseHandler = new PaintMouseHandler();
             canvas.factory = new EllipseFactory();
         }
 
         private void RhombusTools_Click(object sender, EventArgs e)
         {
-            canvas.LastMouseHandler = canvas.MouseHandler;
             canvas.MouseHandler = new PaintMouseHandler();
             canvas.factory = new RhombusFactory();
         }
 
         private void IsoscelesTriangleTools_Click(object sender, EventArgs e)
         {
-            canvas.LastMouseHandler = canvas.MouseHandler;
             canvas.MouseHandler = new PaintMouseHandler();
             canvas.factory = new IsoscelesTriangleFactory();
         }
 
         private void RightTriangleTools_Click(object sender, EventArgs e)
         {
-            canvas.LastMouseHandler = canvas.MouseHandler;
             canvas.MouseHandler = new PaintMouseHandler();
             canvas.factory = new RightTriangleFactory();
         }
 
         private void BrokenLineTools_Click(object sender, EventArgs e)
         {
-            canvas.LastMouseHandler = canvas.MouseHandler;
             canvas.MouseHandler = new PaintMouseHandler();
             canvas.factory = new LineFactory();
         }
@@ -255,7 +247,6 @@ namespace VectorMaster
 
         private void BrushTools_Click(object sender, EventArgs e)
         {
-            canvas.LastMouseHandler = canvas.MouseHandler;
             canvas.MouseHandler = new BrushMouseHandler();
 
             canvas.factory = new BrushFactory();
@@ -279,7 +270,6 @@ namespace VectorMaster
 
         private void button1_Click(object sender, EventArgs e)
         {
-            canvas.LastMouseHandler = canvas.MouseHandler;
             canvas.MouseHandler = new MoveMouseHandler();
         }
     }

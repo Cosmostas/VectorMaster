@@ -24,8 +24,6 @@ namespace VectorMaster.MouseHandler
         {
             Canvas canvas = Canvas.CreateCanvas();
             canvas.pen.Color = canvas.bitmap.GetPixel(canvas.curPoint.X, canvas.curPoint.Y);
-
-            canvas.MouseHandler = canvas.LastMouseHandler;
         }
     }
 }
