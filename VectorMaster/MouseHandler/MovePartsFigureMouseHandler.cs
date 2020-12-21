@@ -29,17 +29,29 @@ namespace VectorMaster.MouseHandler
                     break;
                 }
             }
+
+            canvas.prevPoint = canvas.curPoint;
         }
 
         public void RealizeMouseMove()
         {
             Canvas canvas = Canvas.CreateCanvas();
 
-            Point delta = new Point(canvas.curPoint.X - canvas.prevPoint.X, canvas.curPoint.Y - canvas.prevPoint.Y);
-            canvas.currentFigure.MovePoints(delta, points);
+            Bitmap bitmap = (Bitmap)canvas.bitmap.Clone();
+
+            if (canvas.currentFigure != null && canvas.isMouseDown)
+            {
+
+                Point delta = new Point(canvas.curPoint.X - canvas.prevPoint.X, canvas.curPoint.Y - canvas.prevPoint.Y);
+                canvas.currentFigure.MovePoints(delta, points);
+
+                canvas.prevPoint = canvas.curPoint;
+                canvas.currentFigure.Paint();
+            }
 
             canvas.prevPoint = canvas.curPoint;
-            canvas.currentFigure.Paint();
+            canvas.pictureBox.Image = canvas.bitmap;
+            canvas.bitmap = (Bitmap)bitmap.Clone();
 
         }
 
