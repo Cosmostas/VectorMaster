@@ -17,7 +17,7 @@ namespace VectorMaster.Checkers
         {
             Point startAccuracyLine = new Point(dot.X - Width / 2, dot.Y - Width / 2);
             Point endAccuracyLine = new Point(dot.X + Width / 2, dot.Y + Width / 2);
-
+           
             List<Point> figurePoints = new List<Point>(Points);
             figurePoints.Add(Points[0]);
 
@@ -29,75 +29,44 @@ namespace VectorMaster.Checkers
                 startFigureLine = figurePoints[i];
                 endFigureLine = figurePoints[i + 1];
                 
-                if(
-                    checkDotUpperLine(startFigureLine, endFigureLine, startAccuracyLine)
-                    &&
-                    checkDotUndetLine(startFigureLine, endFigureLine, endAccuracyLine)
-                    &&
-                    (
-                        checkDotInsideLine(startFigureLine, endFigureLine, startAccuracyLine)
-                        ||
-                        checkDotInsideLine(startFigureLine, endFigureLine, endAccuracyLine)
-                    )
-                    )
+                if(startFigureLine.X != endFigureLine.X)
                 {
-                    return true;
+                    float k = (endFigureLine.Y - startFigureLine.Y) / (endFigureLine.X - startFigureLine.X);
+                    float b = endFigureLine.Y - endFigureLine.X * k;
+
+                    float y = dot.X * k + b;
+
+                    if(y >= endAccuracyLine.Y && y <= startAccuracyLine.Y
+                        ||
+                        y <= endAccuracyLine.Y && y >= startAccuracyLine.Y
+                        )
+                    {
+                        return true;
+                    }
+                }
+                else
+                {
+                    float x = startFigureLine.X;
+                    if (x >= endAccuracyLine.X && x <= startAccuracyLine.X
+                        ||
+                        x <= endAccuracyLine.X && x >= startAccuracyLine.X
+                        )
+                    {
+                        float y = dot.Y;
+                        if (y >= endFigureLine.Y && y <= startFigureLine.Y
+                           ||
+                           y <= endFigureLine.Y && y >= startFigureLine.Y
+                           )
+                        {
+                            return true;
+                        }
+                    }
                 }
                 
             }
             return false;
         }
 
-        bool checkDotUpperLine(Point startFigureLine, Point endFigureLine, Point point)
-        {
-            if(point.X == startFigureLine.X || point.Y == startFigureLine.Y)
-            {
-                return true;
-            } 
-            if( (endFigureLine.X - startFigureLine.X) / (point.X - startFigureLine.X) - (endFigureLine.Y - startFigureLine.Y) / (point.Y - startFigureLine.Y) >= 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        bool checkDotUndetLine(Point startFigureLine, Point endFigureLine, Point point)
-        {
-            if (point.X == startFigureLine.X || point.Y == startFigureLine.Y)
-            {
-                return true;
-            }
-            if ((endFigureLine.X - startFigureLine.X) / (point.X - startFigureLine.X) - (endFigureLine.Y - startFigureLine.Y) / (point.Y - startFigureLine.Y) <= 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        bool checkDotInsideLine(Point startFigureLine, Point endFigureLine, Point point)
-        {
-
-            if(point.X >= startFigureLine.X && point.X <= endFigureLine.X || point.X <= startFigureLine.X && point.X >= endFigureLine.X)
-            {
-                if(point.Y >= startFigureLine.Y && point.Y <= endFigureLine.Y || point.Y <= startFigureLine.Y && point.X >= endFigureLine.Y)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
         public int CheckHitInVertex(Point dot, List<Point> Points)
         {
             for (int i = 0; i < Points.Count; i++)
