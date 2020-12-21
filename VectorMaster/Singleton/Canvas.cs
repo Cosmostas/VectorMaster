@@ -50,6 +50,7 @@ namespace VectorMaster
                 return _instance;
             }
         }
+
         public void DrawAll()
         {
 
