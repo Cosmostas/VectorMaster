@@ -282,7 +282,7 @@ namespace VectorMaster
         private void BrokenLineTools_Click(object sender, EventArgs e)
         {
             mode = "Paint";
-            factory = new LineFactory();
+            factory = new BrokenLineFactory();
         }
 
         private void EraserTriangle_Click(object sender, EventArgs e)

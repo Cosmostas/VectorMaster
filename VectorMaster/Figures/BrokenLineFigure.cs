@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VectorMaster.Calculators;
+using VectorMaster.Painters;
 
 namespace VectorMaster.Figures
 {
@@ -14,7 +15,7 @@ namespace VectorMaster.Figures
         {
             listPoints = new List<Point>();
 
-            painter = new PolygonPainter();
+            painter = new LinePainter();
             calculator = new BrokenLineCalculator();
 
         }
@@ -23,7 +24,7 @@ namespace VectorMaster.Figures
             listPoints = new List<Point>();
             this.pen = pen;
 
-            painter = new PolygonPainter();
+            painter = new LinePainter();
             calculator = new BrokenLineCalculator();
         }
         public BrokenLineFigure(Color color, int width)
@@ -31,7 +32,7 @@ namespace VectorMaster.Figures
             listPoints = new List<Point>();
             this.pen = new Pen(color, width);
 
-            painter = new PolygonPainter();
+            painter = new LinePainter();
             calculator = new BrokenLineCalculator();
         }
     }
