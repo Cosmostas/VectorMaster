@@ -33,6 +33,9 @@ namespace VectorMaster.MouseHandler
             Canvas canvas = Canvas.CreateCanvas();
 
             canvas.currentFigure.listPoints = canvas.currentFigure.Calculate(canvas.prevPoint, canvas.CalculatePoint(canvas.curPoint));
+
+            canvas.currentFigure.pen = canvas.pen;
+
             if(canvas.currentFigure != null)
             {
                 canvas.figures.Add(canvas.currentFigure);
