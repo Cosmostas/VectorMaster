@@ -40,7 +40,7 @@ namespace VectorMaster.MouseHandler
 
         }
 
-        public void RealizeMouseup()
+        public void RealizeMouseup() 
         {
             Canvas canvas = Canvas.CreateCanvas();
 

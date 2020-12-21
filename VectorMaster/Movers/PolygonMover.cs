@@ -21,25 +21,32 @@ namespace VectorMaster.Movers
         public void MovePoints(Point delta, List<Point> points)
         {
             Canvas canvas = Canvas.CreateCanvas();
-            
-            int j = 0;
- 
+            List<Point> pointsToMove = new List<Point>();
+
             for (int i = 0; i < canvas.currentFigure.listPoints.Count; ++i)
             {
-                if (j == points.Count)
+                if (0 == points.Count)
                 {
                     break;
                 }
-                if (canvas.currentFigure.listPoints[i] == points[j])
+                for(int j = 0; j< points.Count; ++j)
                 {
-                    Point p = canvas.currentFigure.listPoints[i];
-                    canvas.currentFigure.listPoints[i] = new Point(p.X + delta.X, p.Y + delta.Y);
-                        
-                    ++j;
+                    if (canvas.currentFigure.listPoints[i] == points[j])
+                    {
+                        Point p = canvas.currentFigure.listPoints[i];
+                        canvas.currentFigure.listPoints[i] = new Point(p.X + delta.X, p.Y + delta.Y);
+                        p = points[j];
 
+                        pointsToMove.Add(new Point(p.X + delta.X, p.Y + delta.Y));
+                        points.RemoveAt(j);
+                        break;
+
+                    }
                 }
             }
-            
+            points = new List<Point>(pointsToMove);
+
+
 
         }
     }

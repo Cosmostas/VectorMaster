@@ -10,6 +10,7 @@ namespace VectorMaster.MouseHandler
     public class MovePartsFigureMouseHandler : IMouseHandler
     {
         List<Point> points;
+        Point deltaObs = new Point(0,0);
         public void RealizeMouseDown()
         {
             Canvas canvas = Canvas.CreateCanvas();
@@ -48,9 +49,10 @@ namespace VectorMaster.MouseHandler
 
             if (canvas.currentFigure != null)
             {
+
+
                 canvas.figures.Add(canvas.currentFigure);
                 canvas.currentFigure.Paint();
-
             }
 
             canvas.prevPoint = canvas.curPoint;

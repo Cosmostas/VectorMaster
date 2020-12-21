@@ -17,8 +17,8 @@ namespace VectorMasterTest
             RectangleFigure rectangle = new RectangleFigure(Color.Black, Width);
 
             rectangle.listPoints = Points;
-            bool actual = rectangle.CheckHit(dot);
-            Assert.AreEqual(expected, actual);
+
+
         }
 
         public class GetPointMock : IEnumerable
