@@ -46,10 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MouseHandler\BrokenLineMouseHandler.cs" />
     <Compile Include="MouseHandler\BrushMouseHandler.cs" />
     <Compile Include="MouseHandler\MoveMouseHandler.cs" />
     <Compile Include="MouseHandler\MovePartsFigureMouseHandler.cs" />
     <Compile Include="MouseHandler\PipeteMouseHandler.cs" />
+    <Compile Include="Painters\BrokenLinePainter.cs" />
     <Compile Include="Singleton\Canvas.cs" />
     <Compile Include="Calculators\BrokenLineCalculator.cs" />
     <Compile Include="Calculators\EllipseCalculator.cs" />
