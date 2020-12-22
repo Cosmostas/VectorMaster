@@ -42,14 +42,14 @@
             this.RectangleTools = new System.Windows.Forms.PictureBox();
             this.LineTools = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.buttonMoveVertex = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonPipette = new System.Windows.Forms.Button();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.buttonColor = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.buttonMoveVertex = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Tools.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BrushTools)).BeginInit();
@@ -70,10 +70,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(257, 69);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(193, 56);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(877, 446);
+            this.pictureBox1.Size = new System.Drawing.Size(1021, 571);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
@@ -92,21 +91,18 @@
             this.Tools.Controls.Add(this.EllipseTools);
             this.Tools.Controls.Add(this.RectangleTools);
             this.Tools.Controls.Add(this.LineTools);
-            this.Tools.Location = new System.Drawing.Point(21, 69);
-            this.Tools.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Tools.Location = new System.Drawing.Point(16, 56);
             this.Tools.Name = "Tools";
-            this.Tools.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Tools.Size = new System.Drawing.Size(111, 447);
+            this.Tools.Size = new System.Drawing.Size(83, 571);
             this.Tools.TabIndex = 2;
             this.Tools.TabStop = false;
             // 
             // BrushTools
             // 
             this.BrushTools.Image = ((System.Drawing.Image)(resources.GetObject("BrushTools.Image")));
-            this.BrushTools.Location = new System.Drawing.Point(39, 293);
-            this.BrushTools.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BrushTools.Location = new System.Drawing.Point(29, 238);
             this.BrushTools.Name = "BrushTools";
-            this.BrushTools.Size = new System.Drawing.Size(33, 31);
+            this.BrushTools.Size = new System.Drawing.Size(25, 25);
             this.BrushTools.TabIndex = 11;
             this.BrushTools.TabStop = false;
             this.BrushTools.Click += new System.EventHandler(this.BrushTools_Click);
@@ -114,10 +110,9 @@
             // BrokenLineTools
             // 
             this.BrokenLineTools.Image = ((System.Drawing.Image)(resources.GetObject("BrokenLineTools.Image")));
-            this.BrokenLineTools.Location = new System.Drawing.Point(39, 254);
-            this.BrokenLineTools.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BrokenLineTools.Location = new System.Drawing.Point(29, 206);
             this.BrokenLineTools.Name = "BrokenLineTools";
-            this.BrokenLineTools.Size = new System.Drawing.Size(33, 31);
+            this.BrokenLineTools.Size = new System.Drawing.Size(25, 25);
             this.BrokenLineTools.TabIndex = 10;
             this.BrokenLineTools.TabStop = false;
             this.BrokenLineTools.Click += new System.EventHandler(this.BrokenLineTools_Click);
@@ -125,10 +120,9 @@
             // EraserTriangle
             // 
             this.EraserTriangle.Image = ((System.Drawing.Image)(resources.GetObject("EraserTriangle.Image")));
-            this.EraserTriangle.Location = new System.Drawing.Point(39, 377);
-            this.EraserTriangle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EraserTriangle.Location = new System.Drawing.Point(29, 525);
             this.EraserTriangle.Name = "EraserTriangle";
-            this.EraserTriangle.Size = new System.Drawing.Size(33, 31);
+            this.EraserTriangle.Size = new System.Drawing.Size(25, 25);
             this.EraserTriangle.TabIndex = 10;
             this.EraserTriangle.TabStop = false;
             this.EraserTriangle.Click += new System.EventHandler(this.EraserTriangle_Click);
@@ -136,10 +130,9 @@
             // RightTriangleTools
             // 
             this.RightTriangleTools.Image = ((System.Drawing.Image)(resources.GetObject("RightTriangleTools.Image")));
-            this.RightTriangleTools.Location = new System.Drawing.Point(39, 214);
-            this.RightTriangleTools.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RightTriangleTools.Location = new System.Drawing.Point(29, 174);
             this.RightTriangleTools.Name = "RightTriangleTools";
-            this.RightTriangleTools.Size = new System.Drawing.Size(33, 31);
+            this.RightTriangleTools.Size = new System.Drawing.Size(25, 25);
             this.RightTriangleTools.TabIndex = 9;
             this.RightTriangleTools.TabStop = false;
             this.RightTriangleTools.Click += new System.EventHandler(this.RightTriangleTools_Click);
@@ -147,10 +140,9 @@
             // IsoscelesTriangleTools
             // 
             this.IsoscelesTriangleTools.Image = ((System.Drawing.Image)(resources.GetObject("IsoscelesTriangleTools.Image")));
-            this.IsoscelesTriangleTools.Location = new System.Drawing.Point(39, 176);
-            this.IsoscelesTriangleTools.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.IsoscelesTriangleTools.Location = new System.Drawing.Point(29, 143);
             this.IsoscelesTriangleTools.Name = "IsoscelesTriangleTools";
-            this.IsoscelesTriangleTools.Size = new System.Drawing.Size(33, 31);
+            this.IsoscelesTriangleTools.Size = new System.Drawing.Size(25, 25);
             this.IsoscelesTriangleTools.TabIndex = 8;
             this.IsoscelesTriangleTools.TabStop = false;
             this.IsoscelesTriangleTools.Click += new System.EventHandler(this.IsoscelesTriangleTools_Click);
@@ -158,10 +150,9 @@
             // RhombusTools
             // 
             this.RhombusTools.Image = ((System.Drawing.Image)(resources.GetObject("RhombusTools.Image")));
-            this.RhombusTools.Location = new System.Drawing.Point(39, 138);
-            this.RhombusTools.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RhombusTools.Location = new System.Drawing.Point(29, 112);
             this.RhombusTools.Name = "RhombusTools";
-            this.RhombusTools.Size = new System.Drawing.Size(33, 31);
+            this.RhombusTools.Size = new System.Drawing.Size(25, 25);
             this.RhombusTools.TabIndex = 7;
             this.RhombusTools.TabStop = false;
             this.RhombusTools.Click += new System.EventHandler(this.RhombusTools_Click);
@@ -169,10 +160,9 @@
             // EllipseTools
             // 
             this.EllipseTools.Image = ((System.Drawing.Image)(resources.GetObject("EllipseTools.Image")));
-            this.EllipseTools.Location = new System.Drawing.Point(39, 100);
-            this.EllipseTools.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EllipseTools.Location = new System.Drawing.Point(29, 81);
             this.EllipseTools.Name = "EllipseTools";
-            this.EllipseTools.Size = new System.Drawing.Size(33, 31);
+            this.EllipseTools.Size = new System.Drawing.Size(25, 25);
             this.EllipseTools.TabIndex = 6;
             this.EllipseTools.TabStop = false;
             this.EllipseTools.Click += new System.EventHandler(this.EllipseTools_Click);
@@ -180,10 +170,9 @@
             // RectangleTools
             // 
             this.RectangleTools.Image = ((System.Drawing.Image)(resources.GetObject("RectangleTools.Image")));
-            this.RectangleTools.Location = new System.Drawing.Point(39, 62);
-            this.RectangleTools.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RectangleTools.Location = new System.Drawing.Point(29, 50);
             this.RectangleTools.Name = "RectangleTools";
-            this.RectangleTools.Size = new System.Drawing.Size(33, 31);
+            this.RectangleTools.Size = new System.Drawing.Size(25, 25);
             this.RectangleTools.TabIndex = 5;
             this.RectangleTools.TabStop = false;
             this.RectangleTools.Click += new System.EventHandler(this.RectangleTools_Click);
@@ -191,50 +180,74 @@
             // LineTools
             // 
             this.LineTools.Image = ((System.Drawing.Image)(resources.GetObject("LineTools.Image")));
-            this.LineTools.Location = new System.Drawing.Point(39, 23);
-            this.LineTools.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LineTools.Location = new System.Drawing.Point(29, 19);
             this.LineTools.Name = "LineTools";
-            this.LineTools.Size = new System.Drawing.Size(33, 31);
+            this.LineTools.Size = new System.Drawing.Size(25, 25);
             this.LineTools.TabIndex = 4;
             this.LineTools.TabStop = false;
             this.LineTools.Click += new System.EventHandler(this.LineTools_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.SlateGray;
+            this.groupBox1.BackColor = System.Drawing.Color.Crimson;
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.buttonMoveVertex);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.buttonPipette);
             this.groupBox1.Controls.Add(this.trackBar1);
             this.groupBox1.Controls.Add(this.buttonColor);
-            this.groupBox1.Location = new System.Drawing.Point(1165, 28);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(1251, 56);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(140, 577);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(104, 571);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(5, 507);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 43);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Перемещение фигуры";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonMoveVertex
+            // 
+            this.buttonMoveVertex.BackColor = System.Drawing.Color.White;
+            this.buttonMoveVertex.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonMoveVertex.Location = new System.Drawing.Point(5, 459);
+            this.buttonMoveVertex.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonMoveVertex.Name = "buttonMoveVertex";
+            this.buttonMoveVertex.Size = new System.Drawing.Size(94, 43);
+            this.buttonMoveVertex.TabIndex = 5;
+            this.buttonMoveVertex.Text = "Изменение фигуры";
+            this.buttonMoveVertex.UseVisualStyleBackColor = false;
+            this.buttonMoveVertex.Click += new System.EventHandler(this.buttonMoveVertex_Click);
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Control;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(16, 138);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Location = new System.Drawing.Point(13, 50);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(115, 15);
+            this.textBox1.Size = new System.Drawing.Size(86, 13);
             this.textBox1.TabIndex = 4;
             this.textBox1.Text = "Толщина линии";
             // 
             // buttonPipette
             // 
-            this.buttonPipette.BackColor = System.Drawing.Color.LightGreen;
+            this.buttonPipette.BackColor = System.Drawing.Color.White;
             this.buttonPipette.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonPipette.Location = new System.Drawing.Point(7, 334);
-            this.buttonPipette.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonPipette.Location = new System.Drawing.Point(5, 403);
+            this.buttonPipette.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonPipette.Name = "buttonPipette";
-            this.buttonPipette.Size = new System.Drawing.Size(125, 53);
+            this.buttonPipette.Size = new System.Drawing.Size(94, 43);
             this.buttonPipette.TabIndex = 6;
             this.buttonPipette.Text = "Пипетка";
             this.buttonPipette.UseVisualStyleBackColor = false;
@@ -243,66 +256,40 @@
             // trackBar1
             // 
             this.trackBar1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.trackBar1.Location = new System.Drawing.Point(45, 23);
-            this.trackBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.trackBar1.Location = new System.Drawing.Point(39, 81);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.trackBar1.Maximum = 11;
             this.trackBar1.Minimum = 1;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar1.Size = new System.Drawing.Size(56, 242);
+            this.trackBar1.Size = new System.Drawing.Size(45, 197);
             this.trackBar1.TabIndex = 4;
             this.trackBar1.Value = 1;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // buttonColor
             // 
-            this.buttonColor.BackColor = System.Drawing.Color.LightGreen;
+            this.buttonColor.BackColor = System.Drawing.Color.White;
             this.buttonColor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonColor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonColor.Location = new System.Drawing.Point(7, 273);
-            this.buttonColor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonColor.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonColor.Location = new System.Drawing.Point(5, 356);
+            this.buttonColor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonColor.Name = "buttonColor";
-            this.buttonColor.Size = new System.Drawing.Size(125, 53);
+            this.buttonColor.Size = new System.Drawing.Size(94, 43);
             this.buttonColor.TabIndex = 5;
             this.buttonColor.Text = "Выбор цвета";
             this.buttonColor.UseVisualStyleBackColor = false;
             this.buttonColor.Click += new System.EventHandler(this.buttonColor_Click);
             // 
-            // buttonMoveVertex
-            // 
-            this.buttonMoveVertex.BackColor = System.Drawing.Color.LightGreen;
-            this.buttonMoveVertex.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonMoveVertex.Location = new System.Drawing.Point(7, 396);
-            this.buttonMoveVertex.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonMoveVertex.Name = "buttonMoveVertex";
-            this.buttonMoveVertex.Size = new System.Drawing.Size(125, 53);
-            this.buttonMoveVertex.TabIndex = 5;
-            this.buttonMoveVertex.Text = "Премещение вершины";
-            this.buttonMoveVertex.UseVisualStyleBackColor = false;
-            this.buttonMoveVertex.Click += new System.EventHandler(this.buttonMoveVertex_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.LightGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(7, 458);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 53);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Перемещение фигуры";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1321, 626);
+            this.ClientSize = new System.Drawing.Size(1407, 652);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Tools);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
