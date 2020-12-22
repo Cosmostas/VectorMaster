@@ -16,7 +16,7 @@ namespace VectorMasterTest
 
             RectangleFigure rectangle = new RectangleFigure(Color.Black, Width);
 
-            rectangle.listPoints = Points;
+            rectangle.points = Points;
 
 
         }

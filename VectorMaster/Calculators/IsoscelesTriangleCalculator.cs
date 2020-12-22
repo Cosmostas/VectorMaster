@@ -9,8 +9,12 @@ namespace VectorMaster.Calculators
 {
     public class IsoscelesTriangleCalculator : ICalculator
     {
-        public List<Point> Calculate(Point firstPoint, Point lastPoint)
+        public List<Point> Calculate()
+
         {
+            Canvas canvas = Canvas.CreateCanvas();
+            Point firstPoint = canvas.prevPoint;
+            Point lastPoint = canvas.curPoint;
             return new List<Point>(3) { firstPoint, new Point(firstPoint.X - (lastPoint.X - firstPoint.X), lastPoint.Y), lastPoint };
         }
 

@@ -9,8 +9,11 @@ namespace VectorMaster.Calculators
 {
     public class RhombusCalculator : ICalculator
     {
-        public List<Point> Calculate(Point firstPoint, Point lastPoint)
+        public List<Point> Calculate()
         {
+            Canvas canvas = Canvas.CreateCanvas();
+            Point firstPoint = canvas.prevPoint;
+            Point lastPoint = canvas.curPoint;
             int midpointX = Math.Abs(firstPoint.X - lastPoint.X);
             int midpointY = 0;
             int midpointRhombus = Math.Abs((lastPoint.Y - firstPoint.Y) / 2);

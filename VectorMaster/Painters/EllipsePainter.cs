@@ -31,12 +31,7 @@ namespace VectorMaster.Painters
 
         }
 
-        public void Paint( Pen pen, List<Point> listPoints, float angle)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void PaintDots(Pen pen, List<Point> listPoints)
+        public void PaintDots(Pen pen, List<Point> points)
         {
 
             List<Point> dots = new List<Point>(4) { new Point(pX, pY + sizeY / 2) , new Point(pX + sizeX / 2, pY), new Point(pX + sizeX, pY + sizeY / 2), new Point(pX + sizeX / 2, pY + sizeY) };
@@ -49,12 +44,6 @@ namespace VectorMaster.Painters
                 SolidBrush blackBrush = new SolidBrush(Color.Black);
                 SolidBrush whiteBrush = new SolidBrush(Color.White);
 
-                //int radius = (int)(pen.Width + 6);
-
-                //graphics.DrawEllipse(new Pen(Color.White, pen.Width / 3), point.X  - radius, point.Y - radius, 2*radius, 2*radius);
-
-                //radius = (int)(pen.Width) / 2;
-                //graphics.DrawEllipse(new Pen(Color.Blue, pen.Width / 3), point.X - radius, point.Y - radius, 2 * radius, 2 * radius);
 
                 int radius = (int)(pen.Width / 2);
                 graphics.DrawEllipse(new Pen(Color.White, pen.Width / 3), point.X - radius, point.Y - radius, 2 * radius, 2 * radius);

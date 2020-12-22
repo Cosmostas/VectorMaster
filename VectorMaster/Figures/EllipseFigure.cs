@@ -15,7 +15,7 @@ namespace VectorMaster.Figures
     {
         public EllipseFigure()
         {
-            listPoints = new List<Point>();
+            points = new List<Point>();
 
             painter = new EllipsePainter();
             calculator = new EllipseCalculator();
@@ -25,7 +25,7 @@ namespace VectorMaster.Figures
         }
         public EllipseFigure(Pen pen)
         {
-            listPoints = new List<Point>();
+            points = new List<Point>();
             this.pen = pen;
 
             painter = new EllipsePainter();
@@ -35,7 +35,7 @@ namespace VectorMaster.Figures
         }
         public EllipseFigure(Color color, int width)
         {
-            listPoints = new List<Point>();
+            points = new List<Point>();
             this.pen = new Pen(color, width);
 
             painter = new EllipsePainter();

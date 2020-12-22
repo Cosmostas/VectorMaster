@@ -14,40 +14,37 @@ namespace VectorMaster.Figures
     {
         public IsoscelesTriangleFigure()
         {
-            listPoints = new List<Point>();
+            points = new List<Point>();
 
             painter = new PolygonPainter();
             calculator = new IsoscelesTriangleCalculator();
             mover = new PolygonMover();
-            moverVertex = new PolygonMover();
+            mover = new PolygonMover();
             checker = new PolygonChecker();
-            checkerInVertex = new PolygonChecker();
-            
+
 
         }
         public IsoscelesTriangleFigure(Pen pen)
         {
-            listPoints = new List<Point>();
+            points = new List<Point>();
             this.pen = pen;
 
             painter = new PolygonPainter();
             calculator = new IsoscelesTriangleCalculator();
             mover = new PolygonMover();
+            mover = new PolygonMover();
             checker = new PolygonChecker();
-            checkerInVertex = new PolygonChecker();
-            moverVertex = new PolygonMover();
         }
         public IsoscelesTriangleFigure(Color color, int width)
         {
-            listPoints = new List<Point>();
+            points = new List<Point>();
             this.pen = new Pen(color, width);
 
             painter = new PolygonPainter();
             calculator = new IsoscelesTriangleCalculator();
             mover = new PolygonMover();
+            mover = new PolygonMover();
             checker = new PolygonChecker();
-            checkerInVertex = new PolygonChecker();
-            moverVertex = new PolygonMover();
         }
     }
 }

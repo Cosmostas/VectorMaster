@@ -12,7 +12,7 @@ namespace VectorMasterTest
         public void Calculate(Point firstPoint, Point lastPoint, Point[] Expected)
         {
             RectangleFigure rectangle = new RectangleFigure();
-            Point[] actual = rectangle.Calculate(firstPoint,lastPoint).ToArray();
+            Point[] actual = rectangle.Calculate().ToArray();
             Assert.AreEqual(Expected, actual);
         }
     }

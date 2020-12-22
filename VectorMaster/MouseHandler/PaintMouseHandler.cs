@@ -28,7 +28,7 @@ namespace VectorMaster.MouseHandler
 
             if(canvas.currentFigure != null && canvas.isMouseDown)
             {
-                canvas.currentFigure.listPoints = canvas.currentFigure.Calculate(canvas.prevPoint, canvas.CalculatePoint(canvas.curPoint));
+                canvas.currentFigure.points = canvas.currentFigure.Calculate();
                 canvas.currentFigure.Paint();
             }
 
@@ -41,13 +41,13 @@ namespace VectorMaster.MouseHandler
 
             Canvas canvas = Canvas.CreateCanvas();
 
-            canvas.currentFigure.listPoints = canvas.currentFigure.Calculate(canvas.prevPoint, canvas.CalculatePoint(canvas.curPoint));
+            canvas.currentFigure.points = canvas.currentFigure.Calculate();
 
-            canvas.currentFigure.pen = canvas.pen;
 
             if(canvas.currentFigure != null)
             {
-                canvas.currentFigure.center = canvas.currentFigure.CalculateCenter();
+                canvas.currentFigure.pen = new Pen(canvas.pen.Color, canvas.pen.Width);
+                
                 canvas.figures.Add(canvas.currentFigure);
                 
                 canvas.currentFigure.Paint();

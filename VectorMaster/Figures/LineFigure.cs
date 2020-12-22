@@ -14,7 +14,7 @@ namespace VectorMaster
     {
         public LineFigure()
         {
-            listPoints = new List<Point>();
+            points = new List<Point>();
 
             painter = new PolygonPainter();
             calculator = new LineCalculator();
@@ -24,7 +24,7 @@ namespace VectorMaster
         } 
         public LineFigure(Pen pen)
         {
-            listPoints = new List<Point>();
+            points = new List<Point>();
             this.pen = pen;
 
             painter = new PolygonPainter();
@@ -34,7 +34,7 @@ namespace VectorMaster
         }
         public LineFigure(Color color, int width)
         {
-            listPoints = new List<Point>();
+            points = new List<Point>();
             this.pen = new Pen(color, width);
 
             painter = new PolygonPainter();

@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VectorMaster.Calculators;
+using VectorMaster.Checkers;
+using VectorMaster.Movers;
 using VectorMaster.Painters;
 
 namespace VectorMaster.Figures
@@ -13,24 +15,30 @@ namespace VectorMaster.Figures
     {
         public BrushFigure()
         {
-            listPoints = new List<Point>();
+            points = new List<Point>();
 
             painter = new BrushPainter();
-
+            mover = new PolygonMover();
+            checker = new PolygonChecker();
         }
         public BrushFigure(Pen pen)
         {
-            listPoints = new List<Point>();
+            points = new List<Point>();
             this.pen = pen;
 
             painter = new BrushPainter();
+            mover = new PolygonMover();
+            checker = new PolygonChecker();
+
         }
         public BrushFigure(Color color, int width)
         {
-            listPoints = new List<Point>();
+            points = new List<Point>();
             this.pen = new Pen(color, width);
 
             painter = new BrushPainter();
+            mover = new PolygonMover();
+            checker = new PolygonChecker();
         }
     }
 }
