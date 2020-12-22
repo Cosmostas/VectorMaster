@@ -10,9 +10,9 @@ using VectorMaster.Checkers;
 
 namespace VectorMaster
 {
-    public class RectangleFigure : AFigure
+    public class IsoscelesTriangleTestFigure : AFigure
     {
-        public RectangleFigure()
+        public IsoscelesTriangleTestFigure()
         {
             listPoints = new List<Point>();
 
@@ -25,7 +25,7 @@ namespace VectorMaster
             checkerInVertex = new PolygonChecker();
 
         }
-        public RectangleFigure(Pen pen)
+        public IsoscelesTriangleTestFigure(Pen pen)
         {
             listPoints = new List<Point>();
             this.pen = pen;
@@ -38,7 +38,7 @@ namespace VectorMaster
             checkerInVertex = new PolygonChecker();
             rotator = new Rotators.Rotator();
         }
-        public RectangleFigure(Color color, int width)
+        public IsoscelesTriangleTestFigure(Color color, int width)
         {
             listPoints = new List<Point>();
             this.pen = new Pen(color, width);
