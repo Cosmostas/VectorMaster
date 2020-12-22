@@ -20,7 +20,6 @@ namespace VectorMaster
             calculator = new RectangleCalculator();
             mover = new PolygonMover();
             checker = new PolygonChecker();
-            rotator= new Rotators.Rotator();
             checkerInVertex = new PolygonChecker();
 
         }
@@ -33,7 +32,6 @@ namespace VectorMaster
             calculator = new RectangleCalculator();
             mover = new PolygonMover();
             checker = new PolygonChecker();
-            rotator = new Rotators.Rotator();
         }
         public IsoscelesTriangleTestFigure(Color color, int width)
         {
@@ -44,7 +42,6 @@ namespace VectorMaster
             calculator = new RectangleCalculator();
             mover = new PolygonMover();
             checker = new PolygonChecker();
-            rotator = new Rotators.Rotator();
         }
 
     }

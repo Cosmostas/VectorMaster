@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using VectorMaster.Movers;
 using VectorMaster.Calculators;
 using VectorMaster.Checkers;
-using VectorMaster.Rotators;
 
 namespace VectorMaster
 {
@@ -25,7 +24,6 @@ namespace VectorMaster
         protected IMover moverVertex;
         protected ICalculator calculator;
         protected IChecker checker;
-        protected IRotator rotator;
         protected IChecker checkerInVertex;
 
         public void Paint()
