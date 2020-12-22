@@ -10,5 +10,6 @@ namespace VectorMaster.Calculators
     public interface ICalculator
     {
         List<Point> Calculate(Point firstPoint, Point lastPoint);
+        Point MidpointCalculate();
     }
 }

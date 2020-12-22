@@ -59,6 +59,11 @@ namespace VectorMaster
             return calculator.Calculate(firstPoint, lastPoint);
         }
 
+        public Point MidpointCalculate()
+        {
+            return calculator.MidpointCalculate();
+        }
+
         public List<Point> CheckHit(Point dot)
         {
             return checker.CheckHit(dot, listPoints, (int)pen.Width);

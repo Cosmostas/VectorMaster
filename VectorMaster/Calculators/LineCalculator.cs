@@ -13,5 +13,10 @@ namespace VectorMaster.Calculators
         {           
             return new List<Point>(2) { firstPoint, lastPoint };
         }
+
+        public Point MidpointCalculate()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
