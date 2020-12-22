@@ -21,10 +21,14 @@ namespace VectorMasterTest
     {
         public IEnumerator GetEnumerator()
         {
-            yield return new object[] { new Point(0, 0), new Point(10, 10), new Point[] { new Point(0, 0), new Point(10, 0), new Point(10, 10), new Point(0, 10) } };
-            yield return new object[] { new Point(10, 10), new Point(0, 0), new Point[] { new Point(10, 10), new Point(0,10), new Point(0, 0), new Point(10, 0) } };
-            yield return new object[] { new Point(0, 10), new Point(10, 0), new Point[] { new Point(0, 10), new Point(10,10), new Point(10, 0), new Point(0, 0) } };
-            yield return new object[] { new Point(10, 0), new Point(0, 10), new Point[] { new Point(10, 0), new Point(0,0), new Point(0, 10), new Point(10, 10) } };
+            yield return new object[] { new Point(0, 0), new Point(10, 10), new Point[] 
+            { new Point(0, 0), new Point(10, 0), new Point(10, 10), new Point(0, 10) } };
+            yield return new object[] { new Point(10, 10), new Point(0, 0), new Point[] 
+            { new Point(10, 10), new Point(0,10), new Point(0, 0), new Point(10, 0) } };
+            yield return new object[] { new Point(0, 10), new Point(10, 0), new Point[] 
+            { new Point(0, 10), new Point(10,10), new Point(10, 0), new Point(0, 0) } };
+            yield return new object[] { new Point(10, 0), new Point(0, 10), new Point[] 
+            { new Point(10, 0), new Point(0,0), new Point(0, 10), new Point(10, 10) } };
 
             
         }
