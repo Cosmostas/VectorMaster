@@ -13,6 +13,11 @@ namespace VectorMaster.Checkers
 
         public List<Point> CheckHit(Point dot, List<Point> Points, int Width)
         {
+            Canvas canvas = Canvas.CreateCanvas();
+            if (canvas.currentFigure != null)
+            {
+                Points.Add(canvas.currentFigure.center);
+            }
             for (int i = 0; i < Points.Count; i++)
             {
                 if (Math.Abs(Points[i].X - dot.X) < Width / 2 && Math.Abs(Points[i].Y - dot.Y) < Width / 2)

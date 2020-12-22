@@ -29,11 +29,12 @@ namespace VectorMaster
 
         public void PaintDots(Pen pen, List<Point> listPoints)
         {
-            foreach(Point point in listPoints)
+            Canvas canvas = Canvas.CreateCanvas();
+            Bitmap bitmap = canvas.bitmap;
+            Graphics graphics = Graphics.FromImage(bitmap);
+            int radius;
+            foreach (Point point in listPoints)
             {
-                Canvas canvas = Canvas.CreateCanvas();
-                Bitmap bitmap = canvas.bitmap;
-                Graphics graphics = Graphics.FromImage(bitmap);
                 SolidBrush blackBrush = new SolidBrush(Color.Black);
                 SolidBrush whiteBrush = new SolidBrush(Color.White);
 
@@ -44,10 +45,16 @@ namespace VectorMaster
                 //radius = (int)(pen.Width) / 2;
                 //graphics.DrawEllipse(new Pen(Color.Blue, pen.Width / 3), point.X - radius, point.Y - radius, 2 * radius, 2 * radius);
 
-                int radius = (int)(pen.Width / 2);
+                radius = (int)(pen.Width / 2);
                 graphics.DrawEllipse(new Pen(Color.White, pen.Width / 3), point.X - radius, point.Y - radius, 2 * radius, 2 * radius);
+                graphics.FillEllipse(blackBrush, point.X - radius + 1, point.Y - radius + 1, 2 * (radius - 2), 2 * (radius-2));
 
             }
+            Point center = canvas.currentFigure.center;
+            radius = (int)(pen.Width / 2);
+            graphics.DrawEllipse(new Pen(Color.Black, pen.Width / 3), center.X - radius - 2, center.Y - radius - 2, 2 * (radius + 2), 2 * (radius + 2));
+            graphics.DrawEllipse(new Pen(Color.White, pen.Width / 3), center.X - radius, center.Y - radius, 2 * radius, 2 * radius);
+            graphics.FillEllipse(new SolidBrush(Color.Black), center.X - radius + 2, center.Y - radius + 2, 2 * (radius - 2), 2 * (radius - 2));
         }
     }
 }

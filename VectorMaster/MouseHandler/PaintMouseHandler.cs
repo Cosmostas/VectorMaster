@@ -47,7 +47,9 @@ namespace VectorMaster.MouseHandler
 
             if(canvas.currentFigure != null)
             {
+                canvas.currentFigure.center = canvas.currentFigure.CalculateCenter();
                 canvas.figures.Add(canvas.currentFigure);
+                
                 canvas.currentFigure.Paint();
 
             }
