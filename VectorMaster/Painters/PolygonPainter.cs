@@ -44,7 +44,7 @@ namespace VectorMaster
                 //radius = (int)(pen.Width) / 2;
                 //graphics.DrawEllipse(new Pen(Color.Blue, pen.Width / 3), point.X - radius, point.Y - radius, 2 * radius, 2 * radius);
 
-                int radius = (int)(pen.Width - 6);
+                int radius = (int)(pen.Width / 2);
                 graphics.DrawEllipse(new Pen(Color.White, pen.Width / 3), point.X - radius, point.Y - radius, 2 * radius, 2 * radius);
 
             }
