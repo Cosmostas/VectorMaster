@@ -14,7 +14,7 @@ namespace VectorMasterTest
         public void CheckHit(Point dot, List<Point> Points, int Width, bool expected)
         {
 
-            RectangleFigure rectangle = new RectangleFigure(Color.Black, Width);
+            IsoscelesTriangleTestFigure rectangle = new IsoscelesTriangleTestFigure(Color.Black, Width);
 
             rectangle.points = Points;
 
@@ -23,12 +23,16 @@ namespace VectorMasterTest
 
         public class GetPointMock : IEnumerable
         {
-            public IEnumerator GetEnumerator()
+            public IEnumerator Enumerator
             {
-                yield return new object[] { new Point (7,3), new List<Point>(4) {new Point(5,5), new Point(10, 5), new Point(10, 10), new Point(5, 10) }, 4, true};
+                get
+                {
+                    yield return new object[] { new Point(7, 3), new List<Point>(4) 
+                    { new Point(5, 5), new Point(10, 5), new Point(10, 10), new Point(5, 10) }, 4, true };
 
 
 
+                }
             }
         }
     }

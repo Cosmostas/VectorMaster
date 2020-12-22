@@ -11,11 +11,11 @@ namespace VectorMaster.Factory
     {
         public AFigure CreateFigure()
         {
-            return new RectangleFigure();
+            return new IsoscelesTriangleTestFigure();
         }
         public AFigure CreateFigure(Pen pen)
         {
-            return new RectangleFigure(pen);
+            return new IsoscelesTriangleTestFigure(pen);
         }
     }
 }

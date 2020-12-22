@@ -21,11 +21,14 @@ namespace VectorMasterTest
 
         public class GetPointsTestMock : IEnumerable
         {
-            public IEnumerator GetEnumerator()
+            public IEnumerator Enumerator
             {
-                yield return new object[] { new Point(0, 0), new Point(10, 10), new List<Point> { new Point(0, 0), new Point(10, 10) } };
-                yield return new object[] { new Point(5, 5), new Point(25, 35), new List<Point> { new Point(5, 5), new Point(20, 30) } };
-                yield return new object[] { new Point(20, 30), new Point(40, 40), new List<Point> { new Point(20, 30), new Point(20, 10) } };
+                get
+                {
+                    yield return new object[] { new Point(0, 0), new Point(10, 10), new List<Point> { new Point(0, 0), new Point(10, 10) } };
+                    yield return new object[] { new Point(5, 5), new Point(25, 35), new List<Point> { new Point(5, 5), new Point(20, 30) } };
+                    yield return new object[] { new Point(20, 30), new Point(40, 40), new List<Point> { new Point(20, 30), new Point(20, 10) } };
+                }
             }
         }
     }
