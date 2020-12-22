@@ -18,5 +18,10 @@ namespace VectorMaster.Calculators
             return Points;
 
         }
+
+        public Point CalculateCenter()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

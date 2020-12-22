@@ -32,5 +32,10 @@ namespace VectorMaster.Painters
                 graphics.DrawPolygon(pen, (new List<Point> { listPoints[i], listPoints[i + 1] }).ToArray());
             }
         }
+
+        public void PaintDots(Pen pen, List<Point> listPoints)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

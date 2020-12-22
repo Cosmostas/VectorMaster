@@ -23,5 +23,10 @@ namespace VectorMaster.Painters
         {
             throw new NotImplementedException();
         }
+
+        public void PaintDots(Pen pen, List<Point> listPoints)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

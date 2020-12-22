@@ -33,5 +33,10 @@ namespace VectorMaster.Calculators
             };
 
         }
+
+        public Point CalculateCenter()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

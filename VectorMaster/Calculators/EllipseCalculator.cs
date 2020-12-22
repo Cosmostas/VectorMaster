@@ -46,5 +46,10 @@ namespace VectorMaster.Calculators
                 new Point(sizeX, sizeY)
             };
         }
+
+        public Point CalculateCenter()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

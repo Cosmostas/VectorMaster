@@ -18,6 +18,8 @@ namespace VectorMaster
         public List<Point> listPoints { get; set; }
         public Pen pen { get; set; }
 
+        public Point center;
+
         protected IPainter painter;
         protected IMover mover;
         protected IMover moverVertex;
@@ -29,6 +31,10 @@ namespace VectorMaster
         public void Paint()
         {
             painter.Paint(pen, listPoints);
+        }
+        public void PaintDots()
+        {
+            painter.PaintDots(pen, listPoints);
         }
         public void Move(Point delta, List<Point> listPoints)
         {
@@ -43,6 +49,10 @@ namespace VectorMaster
         public List<Point> Calculate(Point firstPoint, Point lastPoint)
         {
             return calculator.Calculate(firstPoint, lastPoint);
+        } 
+        public Point CalculateCenter()
+        {
+            return calculator.CalculateCenter();
         }
 
         public List<Point> CheckHit(Point dot)

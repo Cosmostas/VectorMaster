@@ -13,5 +13,10 @@ namespace VectorMaster.Calculators
         {
             return new List<Point>(3) { firstPoint, new Point(firstPoint.X - (lastPoint.X - firstPoint.X), lastPoint.Y), lastPoint };
         }
+
+        public Point CalculateCenter()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

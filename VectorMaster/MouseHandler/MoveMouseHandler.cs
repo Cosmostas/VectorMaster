@@ -37,11 +37,13 @@ namespace VectorMaster.MouseHandler
 
             if (canvas.currentFigure != null && canvas.isMouseDown)
             {
-
+               
                 Point delta = new Point(canvas.curPoint.X - canvas.prevPoint.X, canvas.curPoint.Y - canvas.prevPoint.Y);
                 canvas.currentFigure.Move(delta, canvas.currentFigure.listPoints);
+                canvas.currentFigure.center = canvas.currentFigure.CalculateCenter();
 
                 canvas.currentFigure.Paint();
+                canvas.currentFigure.PaintDots();
             }
 
             canvas.prevPoint = canvas.curPoint;
@@ -58,6 +60,7 @@ namespace VectorMaster.MouseHandler
             {   
                 canvas.figures.Add(canvas.currentFigure);
                 canvas.currentFigure.Paint();
+                canvas.currentFigure.PaintDots();
 
             }
 
