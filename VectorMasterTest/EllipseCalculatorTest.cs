@@ -8,7 +8,7 @@ using VectorMaster.Figures;
 
 namespace VectorMasterTest
 {
-    public class EllipseFigureTest
+    public class EllipseCalculatorTest
     {
         [Test, TestCaseSource(typeof(GetPointsTestMock))]
         public void GetPointsTest(Point p1, Point p2, List<Point> expected)
