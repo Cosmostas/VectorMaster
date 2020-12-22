@@ -13,7 +13,7 @@ namespace VectorMaster.Calculators
         {
             Canvas canvas = Canvas.CreateCanvas();
             Point firstPoint = canvas.prevPoint;
-            Point lastPoint = canvas.curPoint;
+            Point lastPoint = canvas.CalculatePoint(canvas.curPoint);
             int midpointX = Math.Abs(firstPoint.X - lastPoint.X);
             int midpointY = 0;
             int midpointRhombus = Math.Abs((lastPoint.Y - firstPoint.Y) / 2);

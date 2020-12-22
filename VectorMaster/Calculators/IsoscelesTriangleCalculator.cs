@@ -14,7 +14,7 @@ namespace VectorMaster.Calculators
         {
             Canvas canvas = Canvas.CreateCanvas();
             Point firstPoint = canvas.prevPoint;
-            Point lastPoint = canvas.curPoint;
+            Point lastPoint = canvas.CalculatePoint(canvas.curPoint);
             return new List<Point>(3) { firstPoint, new Point(firstPoint.X - (lastPoint.X - firstPoint.X), lastPoint.Y), lastPoint };
         }
 
