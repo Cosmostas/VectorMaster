@@ -13,7 +13,7 @@ namespace VectorMasterTest
         public void Calculate(Point firstPoint, Point lastPoint, Point[] Expected)
         {
             IsoscelesTriangleFigure rectangle = new IsoscelesTriangleFigure();
-            Point[] actual = rectangle.Calculate(firstPoint, lastPoint).ToArray();
+            Point[] actual = rectangle.Calculate().ToArray();
             Assert.AreEqual(Expected, actual);
         }
     }

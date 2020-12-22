@@ -26,8 +26,6 @@ namespace VectorMasterTest
             {
                 yield return new object[] { new Point(15, 15), new List<Point>(2) { new Point(5, 5), new Point(10, 10)}, 4, new List<Point> {new Point(15, 15) } };
 
-
-
             }
         }
     }

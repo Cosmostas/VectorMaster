@@ -23,16 +23,10 @@ namespace VectorMasterTest
 
         public class GetPointMock : IEnumerable
         {
-            public IEnumerator Enumerator
+            public IEnumerator GetEnumerator()
             {
-                get
-                {
-                    yield return new object[] { new Point(7, 3), new List<Point>(4) 
+                yield return new object[] { new Point(7, 3), new List<Point>(4)
                     { new Point(5, 5), new Point(10, 5), new Point(10, 10), new Point(5, 10) }, 4, true };
-
-
-
-                }
             }
         }
 

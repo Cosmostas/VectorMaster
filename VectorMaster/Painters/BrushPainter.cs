@@ -16,7 +16,7 @@ namespace VectorMaster.Painters
             
             Canvas canvas = Canvas.CreateCanvas();
             Graphics graphics = Graphics.FromImage(canvas.bitmap);
-            pen.SetLineCap(System.Drawing.Drawing2D.LineCap.Round, System.Drawing.Drawing2D.LineCap.Round, System.Drawing.Drawing2D.DashCap.Round);
+            
             for (int i = 0; i < listPoints.Count - 1; i++)
             {
                 graphics.DrawPolygon(pen, (new List<Point> { listPoints[i], listPoints[i + 1] }).ToArray());
@@ -27,9 +27,10 @@ namespace VectorMaster.Painters
         {
             Canvas canvas = Canvas.CreateCanvas();
             Graphics graphics = Graphics.FromImage(canvas.bitmap);
-            pen.SetLineCap(System.Drawing.Drawing2D.LineCap.Round, System.Drawing.Drawing2D.LineCap.Round, System.Drawing.Drawing2D.DashCap.Round);
+            
             for (int i = 0; i < listPoints.Count - 1; i++)
             {
+                
                 graphics.DrawPolygon(pen, (new List<Point> { listPoints[i], listPoints[i + 1] }).ToArray());
             }
         }
