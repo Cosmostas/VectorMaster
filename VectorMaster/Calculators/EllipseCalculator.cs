@@ -39,6 +39,10 @@ namespace VectorMaster.Calculators
 
             int sizeX = Math.Abs(firstPoint.X - lastPoint.X);
             int sizeY = Math.Abs(firstPoint.Y - lastPoint.Y);
+            
+            Canvas canvas = Canvas.CreateCanvas();
+            canvas.currentFigure.Height = sizeX;
+            canvas.currentFigure.Width = sizeY;
 
             return new List<Point>(2) 
             {

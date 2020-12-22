@@ -17,6 +17,8 @@ namespace VectorMaster
 
         public List<Point> listPoints { get; set; }
         public Pen pen { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
 
         protected IPainter painter;
         protected IMover mover;
@@ -40,6 +42,12 @@ namespace VectorMaster
         {
             mover.Move(delta, listPoints);
         }
+
+        public void Move(int index, Point delta, List<Point> listPoints)
+        {
+            mover.MovePoint(index, delta, listPoints);
+        }
+
         public void MovePoints(Point delta, List<Point> listPoints)
         {
             mover.MovePoints(delta, listPoints);

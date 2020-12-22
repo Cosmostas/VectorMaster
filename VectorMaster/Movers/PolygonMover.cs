@@ -18,6 +18,12 @@ namespace VectorMaster.Movers
             }
         }
 
+        public void MovePoint(int index,  Point delta, List<Point> points)
+        {
+             Point p = points[index];
+             points[index] = new Point(p.X + delta.X, p.Y + delta.Y);
+        }
+
         public void MovePoints(Point delta, List<Point> points)
         {
             Canvas canvas = Canvas.CreateCanvas();

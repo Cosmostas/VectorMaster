@@ -51,6 +51,7 @@
     <Compile Include="MouseHandler\MoveMouseHandler.cs" />
     <Compile Include="MouseHandler\MovePartsFigureMouseHandler.cs" />
     <Compile Include="MouseHandler\PipeteMouseHandler.cs" />
+    <Compile Include="MouseHandler\ResizerMouseHandler.cs" />
     <Compile Include="Painters\BrokenLinePainter.cs" />
     <Compile Include="Singleton\Canvas.cs" />
     <Compile Include="Calculators\BrokenLineCalculator.cs" />
@@ -112,6 +113,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -127,6 +129,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Icons\iconfinder_magnifying-glass-zoom-in-plus_3643761.png" />
+    <None Include="Icons\iconfinder_magnifying-glass-zoom-out-minus_3643760.png" />
     <Content Include="Icons\icons8-eraser-24.png" />
     <Content Include="Icons\icons8-line-24.png" />
     <Content Include="Icons\icons8-oval-24.png" />

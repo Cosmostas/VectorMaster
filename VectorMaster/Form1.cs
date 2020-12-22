@@ -224,5 +224,12 @@ namespace VectorMaster
         {
             canvas.MouseHandler = new MoveMouseHandler();
         }
+
+
+        private void buttonScale_Click(object sender, EventArgs e)
+        {
+            canvas.MouseHandler = new ResizerMouseHandler();
+        }
+
     }
 }
