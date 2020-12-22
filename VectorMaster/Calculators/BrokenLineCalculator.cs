@@ -9,10 +9,10 @@ namespace VectorMaster.Calculators
 {
     public class BrokenLineCalculator : ICalculator
     {
-        public List<Point> Calculate(Point firstPoint, Point lastPoint)
+        public List<Point> Calculate()
         {
             Canvas canvas = Canvas.CreateCanvas();
-            List <Point>Points = new List<Point>(canvas.currentFigure.listPoints);
+            List <Point>Points = new List<Point>(canvas.currentFigure.points);
             
             Points.Add(canvas.curPoint);
             return Points;

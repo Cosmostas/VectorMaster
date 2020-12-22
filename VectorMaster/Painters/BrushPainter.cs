@@ -13,6 +13,7 @@ namespace VectorMaster.Painters
 
         public void Paint(Pen pen, List<Point> listPoints)
         {
+            
             Canvas canvas = Canvas.CreateCanvas();
             Graphics graphics = Graphics.FromImage(canvas.bitmap);
             pen.SetLineCap(System.Drawing.Drawing2D.LineCap.Round, System.Drawing.Drawing2D.LineCap.Round, System.Drawing.Drawing2D.DashCap.Round);
@@ -35,7 +36,7 @@ namespace VectorMaster.Painters
 
         public void PaintDots(Pen pen, List<Point> listPoints)
         {
-            throw new NotImplementedException();
+ 
         }
     }
 }

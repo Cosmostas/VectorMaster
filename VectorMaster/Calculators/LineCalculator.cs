@@ -9,8 +9,11 @@ namespace VectorMaster.Calculators
 {
     public class LineCalculator : ICalculator
     {
-        public List<Point> Calculate(Point firstPoint, Point lastPoint)
-        {           
+        public List<Point> Calculate()
+        {
+            Canvas canvas = Canvas.CreateCanvas();
+            Point firstPoint = canvas.prevPoint;
+            Point lastPoint = canvas.curPoint;
             return new List<Point>(2) { firstPoint, lastPoint };
         }
 

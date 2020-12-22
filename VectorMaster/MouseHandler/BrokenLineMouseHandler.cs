@@ -20,13 +20,15 @@ namespace VectorMaster.MouseHandler
 
                 isPaintingNow = true;
 
-                canvas.currentFigure.listPoints = canvas.currentFigure.Calculate(canvas.prevPoint, canvas.CalculatePoint(canvas.curPoint));
+                canvas.currentFigure.points = canvas.currentFigure.Calculate();
             }
             if (canvas.curPoint == canvas.prevPoint)
             {
                 isPaintingNow = false;
                 canvas.currentFigure.Paint();
-                canvas.currentFigure.listPoints = canvas.currentFigure.Calculate(canvas.prevPoint, canvas.CalculatePoint(canvas.curPoint));
+                canvas.currentFigure.pen = new Pen(canvas.currentFigure.pen.Color, canvas.currentFigure.pen.Width);
+                canvas.currentFigure.points = canvas.currentFigure.Calculate();
+                canvas.figures.Add(canvas.currentFigure);
                 return;
             }
 
@@ -43,10 +45,10 @@ namespace VectorMaster.MouseHandler
 
                 if(canvas.currentFigure != null)
                 {
-                    List <Point> figurePoints = canvas.currentFigure.listPoints;
-                    canvas.currentFigure.listPoints = canvas.currentFigure.Calculate(canvas.prevPoint, canvas.CalculatePoint(canvas.curPoint));
+                    List <Point> figurePoints = canvas.currentFigure.points;
+                    canvas.currentFigure.points = canvas.currentFigure.Calculate();
                     canvas.currentFigure.Paint();
-                    canvas.currentFigure.listPoints = figurePoints;
+                    canvas.currentFigure.points = figurePoints;
                 }
 
                 canvas.pictureBox.Image = canvas.bitmap;
@@ -66,8 +68,8 @@ namespace VectorMaster.MouseHandler
                 canvas.prevPoint = canvas.curPoint;
 
                 canvas.currentFigure.Paint();
-                canvas.currentFigure.listPoints = canvas.currentFigure.Calculate(canvas.prevPoint, canvas.CalculatePoint(canvas.curPoint));
-
+                canvas.currentFigure.points = canvas.currentFigure.Calculate();
+                
             }
         }
     }

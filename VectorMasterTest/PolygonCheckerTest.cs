@@ -16,7 +16,7 @@ namespace VectorMasterTest
 
             IsoscelesTriangleTestFigure rectangle = new IsoscelesTriangleTestFigure(Color.Black, Width);
 
-            rectangle.listPoints = Points;
+            rectangle.points = Points;
 
 
         }

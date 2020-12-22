@@ -39,8 +39,7 @@ namespace VectorMaster.MouseHandler
             {
                
                 Point delta = new Point(canvas.curPoint.X - canvas.prevPoint.X, canvas.curPoint.Y - canvas.prevPoint.Y);
-                canvas.currentFigure.Move(delta, canvas.currentFigure.listPoints);
-                canvas.currentFigure.center = canvas.currentFigure.CalculateCenter();
+                canvas.currentFigure.Move(delta, canvas.currentFigure.points);
 
                 canvas.currentFigure.Paint();
                 canvas.currentFigure.PaintDots();

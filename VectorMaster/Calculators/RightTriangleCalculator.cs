@@ -9,8 +9,11 @@ namespace VectorMaster.Calculators
 {
     public class RightTriangleCalculator : ICalculator
     {
-        public List<Point> Calculate(Point firstPoint, Point lastPoint)
+        public List<Point> Calculate()
         {
+            Canvas canvas = Canvas.CreateCanvas();
+            Point firstPoint = canvas.prevPoint;
+            Point lastPoint = canvas.curPoint;
             return new List<Point>(3) { firstPoint, new Point(firstPoint.X, lastPoint.Y), lastPoint };
         }
 

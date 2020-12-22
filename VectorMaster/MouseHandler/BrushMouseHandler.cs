@@ -14,7 +14,7 @@ namespace VectorMaster.MouseHandler
             Canvas canvas = Canvas.CreateCanvas();
 
             canvas.currentFigure = canvas.factory.CreateFigure(canvas.pen);
-            canvas.currentFigure.listPoints.Add(canvas.curPoint);
+            canvas.currentFigure.points.Add(canvas.curPoint);
         }
 
         public void RealizeMouseMove()
@@ -26,7 +26,7 @@ namespace VectorMaster.MouseHandler
 
             if (canvas.currentFigure != null && canvas.isMouseDown)
             {
-                canvas.currentFigure.listPoints.Add(canvas.curPoint);
+                canvas.currentFigure.points.Add(canvas.curPoint);
                 canvas.currentFigure.Paint();
 
             }
@@ -40,10 +40,11 @@ namespace VectorMaster.MouseHandler
         {
             Canvas canvas = Canvas.CreateCanvas();
 
-            canvas.currentFigure.listPoints.Add(canvas.curPoint);
+            canvas.currentFigure.points.Add(canvas.curPoint);
 
             if (canvas.currentFigure != null)
             {
+                canvas.currentFigure.pen = new Pen(canvas.currentFigure.pen.Color, canvas.currentFigure.pen.Width);
                 canvas.figures.Add(canvas.currentFigure);
                 canvas.currentFigure.Paint();
             }

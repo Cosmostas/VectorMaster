@@ -10,7 +10,6 @@ namespace VectorMaster
     public interface IPainter
     {
         void Paint(Pen pen, List<Point> listPoints);     
-        void Paint(Pen pen, List<Point> listPoints, float angle);
         
         
         void PaintDots(Pen pen, List<Point> listPoints);

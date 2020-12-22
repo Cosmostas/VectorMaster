@@ -15,7 +15,7 @@ namespace VectorMaster
     public abstract class AFigure
     {
 
-        public List<Point> listPoints { get; set; }
+        public List<Point> points { get; set; }
         public Pen pen { get; set; }
 
         public Point center;
@@ -30,11 +30,11 @@ namespace VectorMaster
 
         public void Paint()
         {
-            painter.Paint(pen, listPoints);
+            painter.Paint(pen, points);
         }
         public void PaintDots()
         {
-            painter.PaintDots(pen, listPoints);
+            painter.PaintDots(pen, points);
         }
         public void Move(Point delta, List<Point> listPoints)
         {
@@ -46,9 +46,9 @@ namespace VectorMaster
         }
 
 
-        public List<Point> Calculate(Point firstPoint, Point lastPoint)
+        public List<Point> Calculate()
         {
-            return calculator.Calculate(firstPoint, lastPoint);
+            return calculator.Calculate();
         } 
         public Point CalculateCenter()
         {
@@ -57,7 +57,7 @@ namespace VectorMaster
 
         public List<Point> CheckHit(Point dot)
         {
-            return checker.CheckHit(dot, listPoints, (int)pen.Width);
+            return checker.CheckHit(dot, points, (int)pen.Width);
      
         }
         public void Rotate(Bitmap Bm, Point delta)
